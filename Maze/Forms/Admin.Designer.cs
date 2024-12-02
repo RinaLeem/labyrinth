@@ -90,7 +90,7 @@
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(22, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(527, 46);
@@ -102,7 +102,7 @@
             // 
             this.createPattern.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.createPattern.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.createPattern.Font = new System.Drawing.Font("Montserrat", 10.8F, System.Drawing.FontStyle.Bold);
+            this.createPattern.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.createPattern.ForeColor = System.Drawing.SystemColors.InfoText;
             this.createPattern.Location = new System.Drawing.Point(465, 108);
             this.createPattern.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -116,7 +116,7 @@
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.Location = new System.Drawing.Point(22, 143);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(249, 23);
@@ -126,7 +126,7 @@
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.Location = new System.Drawing.Point(22, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(249, 23);
@@ -137,7 +137,7 @@
             // 
             this.saveToFile.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.saveToFile.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.saveToFile.Font = new System.Drawing.Font("Montserrat", 10.8F, System.Drawing.FontStyle.Bold);
+            this.saveToFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.saveToFile.ForeColor = System.Drawing.SystemColors.InfoText;
             this.saveToFile.Location = new System.Drawing.Point(695, 551);
             this.saveToFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -152,7 +152,7 @@
             // 
             this.Generate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Generate.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Generate.Font = new System.Drawing.Font("Montserrat", 10.8F, System.Drawing.FontStyle.Bold);
+            this.Generate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.Generate.ForeColor = System.Drawing.SystemColors.MenuText;
             this.Generate.Location = new System.Drawing.Point(695, 505);
             this.Generate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -240,11 +240,11 @@
             // 
             this.radioButtonAldousBroder.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonAldousBroder.AutoSize = true;
-            this.radioButtonAldousBroder.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.radioButtonAldousBroder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.radioButtonAldousBroder.Location = new System.Drawing.Point(13, 249);
             this.radioButtonAldousBroder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonAldousBroder.Name = "radioButtonAldousBroder";
-            this.radioButtonAldousBroder.Size = new System.Drawing.Size(322, 31);
+            this.radioButtonAldousBroder.Size = new System.Drawing.Size(288, 29);
             this.radioButtonAldousBroder.TabIndex = 30;
             this.radioButtonAldousBroder.Text = "Алгоритм Олдоса-Бродера";
             this.radioButtonAldousBroder.UseVisualStyleBackColor = true;
@@ -254,11 +254,11 @@
             this.radioButtonEuler.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonEuler.AutoSize = true;
             this.radioButtonEuler.Checked = true;
-            this.radioButtonEuler.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.radioButtonEuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.radioButtonEuler.Location = new System.Drawing.Point(13, 216);
             this.radioButtonEuler.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonEuler.Name = "radioButtonEuler";
-            this.radioButtonEuler.Size = new System.Drawing.Size(221, 31);
+            this.radioButtonEuler.Size = new System.Drawing.Size(202, 29);
             this.radioButtonEuler.TabIndex = 30;
             this.radioButtonEuler.TabStop = true;
             this.radioButtonEuler.Text = "Алгоритм Эйлера";
@@ -267,7 +267,7 @@
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(12, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(527, 46);
@@ -278,7 +278,7 @@
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(3, 163);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(527, 46);
@@ -310,7 +310,7 @@
             // 
             this.buttonTheme4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonTheme4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonTheme4.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.buttonTheme4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonTheme4.ForeColor = System.Drawing.SystemColors.MenuText;
             this.buttonTheme4.Location = new System.Drawing.Point(412, 345);
             this.buttonTheme4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -324,7 +324,7 @@
             // 
             this.buttonTheme3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonTheme3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonTheme3.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.buttonTheme3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonTheme3.ForeColor = System.Drawing.SystemColors.MenuText;
             this.buttonTheme3.Location = new System.Drawing.Point(279, 345);
             this.buttonTheme3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -338,7 +338,7 @@
             // 
             this.buttonTheme2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonTheme2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonTheme2.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.buttonTheme2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonTheme2.ForeColor = System.Drawing.SystemColors.MenuText;
             this.buttonTheme2.Location = new System.Drawing.Point(148, 345);
             this.buttonTheme2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -352,7 +352,7 @@
             // 
             this.buttonTheme1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonTheme1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonTheme1.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.buttonTheme1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonTheme1.ForeColor = System.Drawing.SystemColors.MenuText;
             this.buttonTheme1.Location = new System.Drawing.Point(18, 345);
             this.buttonTheme1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -361,11 +361,12 @@
             this.buttonTheme1.TabIndex = 36;
             this.buttonTheme1.Text = "Тема1";
             this.buttonTheme1.UseVisualStyleBackColor = false;
+            this.buttonTheme1.Click += new System.EventHandler(this.buttonTheme1_Click);
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(3, 297);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(527, 46);
@@ -377,7 +378,7 @@
             // 
             this.nonhanded.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nonhanded.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.nonhanded.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.nonhanded.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.nonhanded.ForeColor = System.Drawing.SystemColors.MenuText;
             this.nonhanded.Location = new System.Drawing.Point(18, 103);
             this.nonhanded.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -392,7 +393,7 @@
             // 
             this.handed.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.handed.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.handed.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.handed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.handed.ForeColor = System.Drawing.SystemColors.MenuText;
             this.handed.Location = new System.Drawing.Point(18, 48);
             this.handed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

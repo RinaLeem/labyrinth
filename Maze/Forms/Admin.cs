@@ -420,6 +420,9 @@ namespace Maze
 
         }
 
-       
+        private void buttonTheme1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

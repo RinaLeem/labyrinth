@@ -31,10 +31,10 @@
             this.aboutUs = new System.Windows.Forms.Button();
             this.aboutSys = new System.Windows.Forms.Button();
             this.outputMazeFile = new System.Windows.Forms.Button();
-            this.radioButtonHalloween = new System.Windows.Forms.RadioButton();
-            this.radioButtonNewYear = new System.Windows.Forms.RadioButton();
-            this.radioButtonForest = new System.Windows.Forms.RadioButton();
-            this.radioButtonSea = new System.Windows.Forms.RadioButton();
+            this.radioButtonAU = new System.Windows.Forms.RadioButton();
+            this.radioButtonSP = new System.Windows.Forms.RadioButton();
+            this.radioButtonSU = new System.Windows.Forms.RadioButton();
+            this.radioButtonWI = new System.Windows.Forms.RadioButton();
             this.radioButtonHands = new System.Windows.Forms.RadioButton();
             this.radioButtonAuto = new System.Windows.Forms.RadioButton();
             this.radioButtonWave = new System.Windows.Forms.RadioButton();
@@ -93,7 +93,7 @@
             // 
             this.outputMazeFile.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.outputMazeFile.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.outputMazeFile.Font = new System.Drawing.Font("Montserrat", 10.8F, System.Drawing.FontStyle.Bold);
+            this.outputMazeFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.outputMazeFile.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outputMazeFile.Location = new System.Drawing.Point(693, 523);
             this.outputMazeFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -104,70 +104,70 @@
             this.outputMazeFile.UseVisualStyleBackColor = false;
             this.outputMazeFile.Click += new System.EventHandler(this.outputMazeFile_Click);
             // 
-            // radioButtonHalloween
+            // radioButtonAU
             // 
-            this.radioButtonHalloween.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.radioButtonHalloween.AutoSize = true;
-            this.radioButtonHalloween.Checked = true;
-            this.radioButtonHalloween.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.radioButtonHalloween.Location = new System.Drawing.Point(20, 16);
-            this.radioButtonHalloween.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButtonHalloween.Name = "radioButtonHalloween";
-            this.radioButtonHalloween.Size = new System.Drawing.Size(140, 31);
-            this.radioButtonHalloween.TabIndex = 9;
-            this.radioButtonHalloween.TabStop = true;
-            this.radioButtonHalloween.Text = "Halloween";
-            this.radioButtonHalloween.UseVisualStyleBackColor = true;
+            this.radioButtonAU.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioButtonAU.AutoSize = true;
+            this.radioButtonAU.Checked = true;
+            this.radioButtonAU.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonAU.Location = new System.Drawing.Point(20, 16);
+            this.radioButtonAU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButtonAU.Name = "radioButtonAU";
+            this.radioButtonAU.Size = new System.Drawing.Size(90, 29);
+            this.radioButtonAU.TabIndex = 9;
+            this.radioButtonAU.TabStop = true;
+            this.radioButtonAU.Text = "Осень";
+            this.radioButtonAU.UseVisualStyleBackColor = true;
             // 
-            // radioButtonNewYear
+            // radioButtonSP
             // 
-            this.radioButtonNewYear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.radioButtonNewYear.AutoSize = true;
-            this.radioButtonNewYear.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.radioButtonNewYear.Location = new System.Drawing.Point(264, 16);
-            this.radioButtonNewYear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButtonNewYear.Name = "radioButtonNewYear";
-            this.radioButtonNewYear.Size = new System.Drawing.Size(145, 31);
-            this.radioButtonNewYear.TabIndex = 10;
-            this.radioButtonNewYear.Text = "Новый год";
-            this.radioButtonNewYear.UseVisualStyleBackColor = true;
+            this.radioButtonSP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioButtonSP.AutoSize = true;
+            this.radioButtonSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonSP.Location = new System.Drawing.Point(264, 16);
+            this.radioButtonSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButtonSP.Name = "radioButtonSP";
+            this.radioButtonSP.Size = new System.Drawing.Size(87, 29);
+            this.radioButtonSP.TabIndex = 10;
+            this.radioButtonSP.Text = "Весна";
+            this.radioButtonSP.UseVisualStyleBackColor = true;
             // 
-            // radioButtonForest
+            // radioButtonSU
             // 
-            this.radioButtonForest.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.radioButtonForest.AutoSize = true;
-            this.radioButtonForest.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.radioButtonForest.Location = new System.Drawing.Point(20, 51);
-            this.radioButtonForest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButtonForest.Name = "radioButtonForest";
-            this.radioButtonForest.Size = new System.Drawing.Size(164, 31);
-            this.radioButtonForest.TabIndex = 11;
-            this.radioButtonForest.Text = "Лесная тема";
-            this.radioButtonForest.UseVisualStyleBackColor = true;
+            this.radioButtonSU.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioButtonSU.AutoSize = true;
+            this.radioButtonSU.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonSU.Location = new System.Drawing.Point(20, 51);
+            this.radioButtonSU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButtonSU.Name = "radioButtonSU";
+            this.radioButtonSU.Size = new System.Drawing.Size(82, 29);
+            this.radioButtonSU.TabIndex = 11;
+            this.radioButtonSU.Text = "Лето";
+            this.radioButtonSU.UseVisualStyleBackColor = true;
             // 
-            // radioButtonSea
+            // radioButtonWI
             // 
-            this.radioButtonSea.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.radioButtonSea.AutoSize = true;
-            this.radioButtonSea.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.radioButtonSea.Location = new System.Drawing.Point(264, 51);
-            this.radioButtonSea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButtonSea.Name = "radioButtonSea";
-            this.radioButtonSea.Size = new System.Drawing.Size(180, 31);
-            this.radioButtonSea.TabIndex = 12;
-            this.radioButtonSea.Text = "Морская тема";
-            this.radioButtonSea.UseVisualStyleBackColor = true;
+            this.radioButtonWI.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioButtonWI.AutoSize = true;
+            this.radioButtonWI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonWI.Location = new System.Drawing.Point(264, 51);
+            this.radioButtonWI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButtonWI.Name = "radioButtonWI";
+            this.radioButtonWI.Size = new System.Drawing.Size(84, 29);
+            this.radioButtonWI.TabIndex = 12;
+            this.radioButtonWI.Text = "Зима";
+            this.radioButtonWI.UseVisualStyleBackColor = true;
             // 
             // radioButtonHands
             // 
             this.radioButtonHands.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonHands.AutoSize = true;
             this.radioButtonHands.Checked = true;
-            this.radioButtonHands.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.radioButtonHands.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.radioButtonHands.Location = new System.Drawing.Point(18, 4);
             this.radioButtonHands.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonHands.Name = "radioButtonHands";
-            this.radioButtonHands.Size = new System.Drawing.Size(111, 31);
+            this.radioButtonHands.Size = new System.Drawing.Size(98, 29);
             this.radioButtonHands.TabIndex = 13;
             this.radioButtonHands.TabStop = true;
             this.radioButtonHands.Text = "Ручной";
@@ -177,11 +177,11 @@
             // 
             this.radioButtonAuto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonAuto.AutoSize = true;
-            this.radioButtonAuto.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.radioButtonAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.radioButtonAuto.Location = new System.Drawing.Point(18, 38);
             this.radioButtonAuto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonAuto.Name = "radioButtonAuto";
-            this.radioButtonAuto.Size = new System.Drawing.Size(208, 31);
+            this.radioButtonAuto.Size = new System.Drawing.Size(193, 29);
             this.radioButtonAuto.TabIndex = 14;
             this.radioButtonAuto.Text = "Автоматический";
             this.radioButtonAuto.UseVisualStyleBackColor = true;
@@ -191,11 +191,11 @@
             this.radioButtonWave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonWave.AutoSize = true;
             this.radioButtonWave.Checked = true;
-            this.radioButtonWave.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.radioButtonWave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.radioButtonWave.Location = new System.Drawing.Point(21, 53);
             this.radioButtonWave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonWave.Name = "radioButtonWave";
-            this.radioButtonWave.Size = new System.Drawing.Size(246, 31);
+            this.radioButtonWave.Size = new System.Drawing.Size(219, 29);
             this.radioButtonWave.TabIndex = 15;
             this.radioButtonWave.TabStop = true;
             this.radioButtonWave.Text = "Волновой алгоритм";
@@ -205,11 +205,11 @@
             // 
             this.radioButton1Hands.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton1Hands.AutoSize = true;
-            this.radioButton1Hands.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.radioButton1Hands.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.radioButton1Hands.Location = new System.Drawing.Point(21, 94);
             this.radioButton1Hands.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton1Hands.Name = "radioButton1Hands";
-            this.radioButton1Hands.Size = new System.Drawing.Size(265, 31);
+            this.radioButton1Hands.Size = new System.Drawing.Size(235, 29);
             this.radioButton1Hands.TabIndex = 16;
             this.radioButton1Hands.Text = "Алгоритм одной руки";
             this.radioButton1Hands.UseVisualStyleBackColor = true;
@@ -231,7 +231,7 @@
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(25, 465);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(457, 36);
@@ -245,7 +245,7 @@
             this.startGame.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.startGame.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.startGame.Enabled = false;
-            this.startGame.Font = new System.Drawing.Font("Montserrat", 10.8F, System.Drawing.FontStyle.Bold);
+            this.startGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.startGame.ForeColor = System.Drawing.SystemColors.WindowText;
             this.startGame.Location = new System.Drawing.Point(693, 569);
             this.startGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -259,10 +259,10 @@
             // 
             // ThemeGroupBox
             // 
-            this.ThemeGroupBox.Controls.Add(this.radioButtonHalloween);
-            this.ThemeGroupBox.Controls.Add(this.radioButtonNewYear);
-            this.ThemeGroupBox.Controls.Add(this.radioButtonForest);
-            this.ThemeGroupBox.Controls.Add(this.radioButtonSea);
+            this.ThemeGroupBox.Controls.Add(this.radioButtonAU);
+            this.ThemeGroupBox.Controls.Add(this.radioButtonSP);
+            this.ThemeGroupBox.Controls.Add(this.radioButtonSU);
+            this.ThemeGroupBox.Controls.Add(this.radioButtonWI);
             this.ThemeGroupBox.Location = new System.Drawing.Point(25, 219);
             this.ThemeGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.ThemeGroupBox.Name = "ThemeGroupBox";
@@ -274,7 +274,7 @@
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(25, 169);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(457, 46);
@@ -285,7 +285,7 @@
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(19, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(527, 46);
@@ -296,7 +296,7 @@
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(3, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(485, 46);
@@ -307,7 +307,7 @@
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(29, 542);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(542, 36);
@@ -408,10 +408,10 @@
         private System.Windows.Forms.Button aboutUs;
         private System.Windows.Forms.Button aboutSys;
         private System.Windows.Forms.Button outputMazeFile;
-        private System.Windows.Forms.RadioButton radioButtonHalloween;
-        private System.Windows.Forms.RadioButton radioButtonNewYear;
-        private System.Windows.Forms.RadioButton radioButtonForest;
-        private System.Windows.Forms.RadioButton radioButtonSea;
+        private System.Windows.Forms.RadioButton radioButtonAU;
+        private System.Windows.Forms.RadioButton radioButtonSP;
+        private System.Windows.Forms.RadioButton radioButtonSU;
+        private System.Windows.Forms.RadioButton radioButtonWI;
         private System.Windows.Forms.RadioButton radioButtonHands;
         private System.Windows.Forms.RadioButton radioButtonAuto;
         private System.Windows.Forms.RadioButton radioButtonWave;

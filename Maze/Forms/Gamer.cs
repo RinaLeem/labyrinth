@@ -60,8 +60,8 @@ namespace Maze
                     trackBarSpeed.Visible = false;
                     trackBarSpeed.Enabled = false;
                     radioButtonHands.Checked = true;
-                    radioButtonHalloween.Checked = true;
-                    ThemeRadioButtons_CheckedChanged(radioButtonHalloween, null);
+                    radioButtonAU.Checked = true;
+                    ThemeRadioButtons_CheckedChanged(radioButtonAU, null);
                     ModeRadioButtons_CheckedChanged(radioButtonHands, null);
                     break;
                 case EStepForm.LOADEDMAZE:
@@ -74,8 +74,8 @@ namespace Maze
                     startGame.Enabled = true;
                     trackBarSpeed.Enabled = true;
                     radioButtonHands.Checked = true;
-                    radioButtonHalloween.Checked = true;
-                    ThemeRadioButtons_CheckedChanged(radioButtonHalloween, null);
+                    radioButtonAU.Checked = true;
+                    ThemeRadioButtons_CheckedChanged(radioButtonAU, null);
                     ModeRadioButtons_CheckedChanged(radioButtonHands, null);
                     break;
                 case EStepForm.BEGANPASS:
@@ -370,19 +370,19 @@ namespace Maze
             {
                 switch (radioButton.Name)
                 {
-                    case "radioButtonHalloween":
+                    case "radioButtonAU":
                         wallBrush = new SolidBrush(Color.Orange);
                         DrawMaze();
                         break;
-                    case "radioButtonForest":
+                    case "radioButtonSU":
                         wallBrush = new SolidBrush(Color.Green);
                         DrawMaze();
                         break;
-                    case "radioButtonNewYear":
-                        wallBrush = new SolidBrush(Color.Blue);
+                    case "radioButtonSP":
+                        wallBrush = new SolidBrush(Color.Pink);
                         DrawMaze();
                         break;
-                    case "radioButtonSea":
+                    case "radioButtonWI":
                         wallBrush = new SolidBrush(Color.Aqua);
                         DrawMaze();
                         break;
