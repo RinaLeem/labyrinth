@@ -23,6 +23,7 @@ namespace Maze
 
         }
         /*        private StepForm stepForm = StepForm.NOTCREATETEMPLATE;*/
+        SolidBrush wallBrush = new SolidBrush(Color.Orange);
         private bool[,] FillWallsArray;
         private Point? startPoint = null;
         private Point? endPoint = null;
@@ -179,7 +180,7 @@ namespace Maze
 
             Pen wallPen = new Pen(Color.Black);
             SolidBrush cellBrush = new SolidBrush(Color.White);
-            SolidBrush wallBrush = new SolidBrush(Color.Orange);
+            //SolidBrush wallBrush = new SolidBrush(Color.Orange);
             SolidBrush startPointBrush = new SolidBrush(Color.GreenYellow);
             SolidBrush endPointBrush = new SolidBrush(Color.Red);
 
@@ -415,6 +416,46 @@ namespace Maze
             DrawMaze();
         }
 
+        private void Gamer_Load(object sender, EventArgs e)
+        {
+            
+            Control.ControlCollection themes = ThemeGroupBox.Controls;
+
+            foreach (RadioButton rdb in themes)
+            {
+                rdb.MouseUp += ThemeRadioButtons_CheckedChanged;
+            }
+            
+
+        }
+
+        private void ThemeRadioButtons_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioButton = sender as RadioButton;
+
+            if (radioButton.Checked == true)
+            {
+                switch (radioButton.Name)
+                {
+                    case "radioButtonAU":
+                        wallBrush = new SolidBrush(Color.Orange);
+                        DrawMaze();
+                        break;
+                    case "radioButtonSU":
+                        wallBrush = new SolidBrush(Color.Green);
+                        DrawMaze();
+                        break;
+                    case "radioButtonSP":
+                        wallBrush = new SolidBrush(Color.Pink);
+                        DrawMaze();
+                        break;
+                    case "radioButtonWI":
+                        wallBrush = new SolidBrush(Color.Aqua);
+                        DrawMaze();
+                        break;
+                }
+            }
+        }
         private void ModeRadioButtons_CheckedChanged(object sender, EventArgs e)
         {
 

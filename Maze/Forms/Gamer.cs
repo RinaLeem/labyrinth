@@ -256,6 +256,8 @@ namespace Maze
             if (FillWallsArray is null || FillWallsArray?.Length == 0)
                 return;
 
+
+
             float cellWidth = (float)pictureMaze.Width / gridWidth;
             float cellHeight = (float)pictureMaze.Height / gridHeight;
 

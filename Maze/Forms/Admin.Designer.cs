@@ -44,17 +44,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.settingMazePanel = new System.Windows.Forms.Panel();
-            this.buttonTheme4 = new System.Windows.Forms.Button();
-            this.buttonTheme3 = new System.Windows.Forms.Button();
-            this.buttonTheme2 = new System.Windows.Forms.Button();
-            this.buttonTheme1 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.ThemeGroupBox = new System.Windows.Forms.GroupBox();
+            this.radioButtonWI = new System.Windows.Forms.RadioButton();
+            this.radioButtonSP = new System.Windows.Forms.RadioButton();
+            this.radioButtonSU = new System.Windows.Forms.RadioButton();
+            this.radioButtonAU = new System.Windows.Forms.RadioButton();
             this.nonhanded = new System.Windows.Forms.Button();
             this.handed = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.widthUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMaze)).BeginInit();
             this.settingMazePanel.SuspendLayout();
+            this.ThemeGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // AdminAboutUs
@@ -289,11 +290,7 @@
             // settingMazePanel
             // 
             this.settingMazePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.settingMazePanel.Controls.Add(this.buttonTheme4);
-            this.settingMazePanel.Controls.Add(this.buttonTheme3);
-            this.settingMazePanel.Controls.Add(this.buttonTheme2);
-            this.settingMazePanel.Controls.Add(this.buttonTheme1);
-            this.settingMazePanel.Controls.Add(this.label5);
+            this.settingMazePanel.Controls.Add(this.ThemeGroupBox);
             this.settingMazePanel.Controls.Add(this.nonhanded);
             this.settingMazePanel.Controls.Add(this.handed);
             this.settingMazePanel.Controls.Add(this.radioButtonAldousBroder);
@@ -306,73 +303,65 @@
             this.settingMazePanel.TabIndex = 32;
             this.settingMazePanel.Visible = false;
             // 
-            // buttonTheme4
+            // ThemeGroupBox
             // 
-            this.buttonTheme4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonTheme4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonTheme4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonTheme4.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.buttonTheme4.Location = new System.Drawing.Point(412, 345);
-            this.buttonTheme4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonTheme4.Name = "buttonTheme4";
-            this.buttonTheme4.Size = new System.Drawing.Size(112, 42);
-            this.buttonTheme4.TabIndex = 39;
-            this.buttonTheme4.Text = "Зима";
-            this.buttonTheme4.UseVisualStyleBackColor = false;
+            this.ThemeGroupBox.Controls.Add(this.radioButtonWI);
+            this.ThemeGroupBox.Controls.Add(this.radioButtonSP);
+            this.ThemeGroupBox.Controls.Add(this.radioButtonSU);
+            this.ThemeGroupBox.Controls.Add(this.radioButtonAU);
+            this.ThemeGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.ThemeGroupBox.Location = new System.Drawing.Point(8, 293);
+            this.ThemeGroupBox.Name = "ThemeGroupBox";
+            this.ThemeGroupBox.Size = new System.Drawing.Size(522, 100);
+            this.ThemeGroupBox.TabIndex = 33;
+            this.ThemeGroupBox.TabStop = false;
+            this.ThemeGroupBox.Text = "Темы лабиринта:";
             // 
-            // buttonTheme3
+            // radioButtonWI
             // 
-            this.buttonTheme3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonTheme3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonTheme3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonTheme3.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.buttonTheme3.Location = new System.Drawing.Point(279, 345);
-            this.buttonTheme3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonTheme3.Name = "buttonTheme3";
-            this.buttonTheme3.Size = new System.Drawing.Size(112, 42);
-            this.buttonTheme3.TabIndex = 38;
-            this.buttonTheme3.Text = "Весна";
-            this.buttonTheme3.UseVisualStyleBackColor = false;
+            this.radioButtonWI.AutoSize = true;
+            this.radioButtonWI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonWI.Location = new System.Drawing.Point(412, 43);
+            this.radioButtonWI.Name = "radioButtonWI";
+            this.radioButtonWI.Size = new System.Drawing.Size(84, 29);
+            this.radioButtonWI.TabIndex = 3;
+            this.radioButtonWI.Text = "Зима";
+            this.radioButtonWI.UseVisualStyleBackColor = true;
             // 
-            // buttonTheme2
+            // radioButtonSP
             // 
-            this.buttonTheme2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonTheme2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonTheme2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonTheme2.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.buttonTheme2.Location = new System.Drawing.Point(148, 345);
-            this.buttonTheme2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonTheme2.Name = "buttonTheme2";
-            this.buttonTheme2.Size = new System.Drawing.Size(112, 42);
-            this.buttonTheme2.TabIndex = 37;
-            this.buttonTheme2.Text = "Лето";
-            this.buttonTheme2.UseVisualStyleBackColor = false;
+            this.radioButtonSP.AutoSize = true;
+            this.radioButtonSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonSP.Location = new System.Drawing.Point(285, 43);
+            this.radioButtonSP.Name = "radioButtonSP";
+            this.radioButtonSP.Size = new System.Drawing.Size(87, 29);
+            this.radioButtonSP.TabIndex = 2;
+            this.radioButtonSP.Text = "Весна";
+            this.radioButtonSP.UseVisualStyleBackColor = true;
             // 
-            // buttonTheme1
+            // radioButtonSU
             // 
-            this.buttonTheme1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonTheme1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonTheme1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonTheme1.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.buttonTheme1.Location = new System.Drawing.Point(18, 345);
-            this.buttonTheme1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonTheme1.Name = "buttonTheme1";
-            this.buttonTheme1.Size = new System.Drawing.Size(112, 42);
-            this.buttonTheme1.TabIndex = 36;
-            this.buttonTheme1.Text = "Осень";
-            this.buttonTheme1.UseVisualStyleBackColor = false;
-            this.buttonTheme1.Click += new System.EventHandler(this.buttonTheme1_Click);
+            this.radioButtonSU.AutoSize = true;
+            this.radioButtonSU.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonSU.Location = new System.Drawing.Point(159, 43);
+            this.radioButtonSU.Name = "radioButtonSU";
+            this.radioButtonSU.Size = new System.Drawing.Size(82, 29);
+            this.radioButtonSU.TabIndex = 1;
+            this.radioButtonSU.Text = "Лето";
+            this.radioButtonSU.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // radioButtonAU
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(3, 297);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(527, 46);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Темы лабиринта:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.radioButtonAU.AutoSize = true;
+            this.radioButtonAU.Checked = true;
+            this.radioButtonAU.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonAU.Location = new System.Drawing.Point(23, 43);
+            this.radioButtonAU.Name = "radioButtonAU";
+            this.radioButtonAU.Size = new System.Drawing.Size(90, 29);
+            this.radioButtonAU.TabIndex = 0;
+            this.radioButtonAU.TabStop = true;
+            this.radioButtonAU.Text = "Осень";
+            this.radioButtonAU.UseVisualStyleBackColor = true;
             // 
             // nonhanded
             // 
@@ -427,11 +416,14 @@
             this.MinimizeBox = false;
             this.Name = "Admin";
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.Gamer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.widthUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMaze)).EndInit();
             this.settingMazePanel.ResumeLayout(false);
             this.settingMazePanel.PerformLayout();
+            this.ThemeGroupBox.ResumeLayout(false);
+            this.ThemeGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -456,10 +448,10 @@
         private System.Windows.Forms.Panel settingMazePanel;
         private System.Windows.Forms.Button handed;
         private System.Windows.Forms.Button nonhanded;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button buttonTheme4;
-        private System.Windows.Forms.Button buttonTheme3;
-        private System.Windows.Forms.Button buttonTheme2;
-        private System.Windows.Forms.Button buttonTheme1;
+        private System.Windows.Forms.GroupBox ThemeGroupBox;
+        private System.Windows.Forms.RadioButton radioButtonAU;
+        private System.Windows.Forms.RadioButton radioButtonWI;
+        private System.Windows.Forms.RadioButton radioButtonSP;
+        private System.Windows.Forms.RadioButton radioButtonSU;
     }
 }
