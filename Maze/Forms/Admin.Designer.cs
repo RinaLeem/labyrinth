@@ -317,7 +317,7 @@
             this.buttonTheme4.Name = "buttonTheme4";
             this.buttonTheme4.Size = new System.Drawing.Size(112, 42);
             this.buttonTheme4.TabIndex = 39;
-            this.buttonTheme4.Text = "Тема1";
+            this.buttonTheme4.Text = "Зима";
             this.buttonTheme4.UseVisualStyleBackColor = false;
             // 
             // buttonTheme3
@@ -331,7 +331,7 @@
             this.buttonTheme3.Name = "buttonTheme3";
             this.buttonTheme3.Size = new System.Drawing.Size(112, 42);
             this.buttonTheme3.TabIndex = 38;
-            this.buttonTheme3.Text = "Тема1";
+            this.buttonTheme3.Text = "Весна";
             this.buttonTheme3.UseVisualStyleBackColor = false;
             // 
             // buttonTheme2
@@ -345,7 +345,7 @@
             this.buttonTheme2.Name = "buttonTheme2";
             this.buttonTheme2.Size = new System.Drawing.Size(112, 42);
             this.buttonTheme2.TabIndex = 37;
-            this.buttonTheme2.Text = "Тема1";
+            this.buttonTheme2.Text = "Лето";
             this.buttonTheme2.UseVisualStyleBackColor = false;
             // 
             // buttonTheme1
@@ -359,7 +359,7 @@
             this.buttonTheme1.Name = "buttonTheme1";
             this.buttonTheme1.Size = new System.Drawing.Size(112, 42);
             this.buttonTheme1.TabIndex = 36;
-            this.buttonTheme1.Text = "Тема1";
+            this.buttonTheme1.Text = "Осень";
             this.buttonTheme1.UseVisualStyleBackColor = false;
             this.buttonTheme1.Click += new System.EventHandler(this.buttonTheme1_Click);
             // 

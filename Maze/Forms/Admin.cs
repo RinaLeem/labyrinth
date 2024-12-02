@@ -179,7 +179,7 @@ namespace Maze
 
             Pen wallPen = new Pen(Color.Black);
             SolidBrush cellBrush = new SolidBrush(Color.White);
-            SolidBrush wallBrush = new SolidBrush(Color.Black);
+            SolidBrush wallBrush = new SolidBrush(Color.Orange);
             SolidBrush startPointBrush = new SolidBrush(Color.GreenYellow);
             SolidBrush endPointBrush = new SolidBrush(Color.Red);
 
