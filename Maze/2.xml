@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Matrix>
-  <Row>rue</Cell>
+  <Row>
+    <Cell>True</Cell>
+    <Cell>True</Cell>
+    <Cell>True</Cell>
+    <Cell>True</Cell>
+    <Cell>True</Cell>
+    <Cell>True</Cell>
     <Cell>True</Cell>
     <Cell>True</Cell>
     <Cell>True</Cell>
@@ -16,13 +22,7 @@
     <Cell>False</Cell>
     <Cell>False</Cell>
     <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
     <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
@@ -36,63 +36,11 @@
   </Row>
   <Row>
     <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
-  </Row>
-  <Row>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-  </Row>
-  <Row>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
@@ -108,15 +56,9 @@
     <Cell>False</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>False</Cell>
     <Cell>False</Cell>
@@ -128,19 +70,13 @@
   </Row>
   <Row>
     <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
     <Cell>True</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
+    <Cell>True</Cell>
+    <Cell>True</Cell>
     <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
@@ -152,11 +88,9 @@
   <Row>
     <Cell>True</Cell>
     <Cell>False</Cell>
-    <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>False</Cell>
     <Cell>False</Cell>
-    <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
@@ -167,8 +101,38 @@
     <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
+  </Row>
+  <Row>
+    <Cell>True</Cell>
+    <Cell>True</Cell>
+    <Cell>True</Cell>
+    <Cell>True</Cell>
+    <Cell>True</Cell>
+    <Cell>False</Cell>
+    <Cell>True</Cell>
+    <Cell>False</Cell>
+    <Cell>True</Cell>
+    <Cell>True</Cell>
+    <Cell>True</Cell>
+    <Cell>False</Cell>
+    <Cell>True</Cell>
+    <Cell>False</Cell>
+    <Cell>True</Cell>
+  </Row>
+  <Row>
+    <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>False</Cell>
+    <Cell>False</Cell>
+    <Cell>False</Cell>
+    <Cell>False</Cell>
+    <Cell>True</Cell>
+    <Cell>False</Cell>
+    <Cell>False</Cell>
+    <Cell>False</Cell>
+    <Cell>True</Cell>
+    <Cell>False</Cell>
+    <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
   </Row>
@@ -185,12 +149,6 @@
     <Cell>True</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
@@ -210,25 +168,11 @@
     <Cell>False</Cell>
     <Cell>False</Cell>
     <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
     <Cell>True</Cell>
   </Row>
   <Row>
     <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
     <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
     <Cell>True</Cell>
     <Cell>True</Cell>
     <Cell>True</Cell>
@@ -237,6 +181,8 @@
     <Cell>True</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
+    <Cell>True</Cell>
+    <Cell>True</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
@@ -248,19 +194,13 @@
     <Cell>False</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>True</Cell>
-    <Cell>False</Cell>
     <Cell>False</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
-    <Cell>True</Cell>
+    <Cell>False</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
   </Row>
@@ -270,19 +210,13 @@
     <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
-    <Cell>False</Cell>
     <Cell>True</Cell>
-    <Cell>False</Cell>
     <Cell>True</Cell>
-    <Cell>False</Cell>
     <Cell>True</Cell>
-    <Cell>False</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
@@ -292,17 +226,11 @@
     <Cell>False</Cell>
     <Cell>False</Cell>
     <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
-    <Cell>False</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>True</Cell>
     <Cell>False</Cell>
-    <Cell>True</Cell>
     <Cell>False</Cell>
-    <Cell>True</Cell>
     <Cell>False</Cell>
     <Cell>False</Cell>
     <Cell>False</Cell>
@@ -326,13 +254,7 @@
     <Cell>True</Cell>
     <Cell>True</Cell>
     <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
-    <Cell>True</Cell>
   </Row>
-  <StartPoint>13:0</StartPoint>
-  <EndPoint>3:20</EndPoint>
+  <StartPoint>6:0</StartPoint>
+  <EndPoint>12:14</EndPoint>
 </Matrix>
