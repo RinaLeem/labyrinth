@@ -11827,9 +11827,9 @@
 														"$ref": "AAAAAAGTi9OOx0SHWFI="
 													},
 													"font": "Arial;13;0",
-													"left": 376,
+													"left": 392,
 													"top": 28,
-													"width": 337,
+													"width": 321,
 													"height": 13,
 													"text": "Система",
 													"verticalAlignment": 3
@@ -11856,9 +11856,9 @@
 												}
 											],
 											"font": "Arial;13;0",
-											"left": 376,
+											"left": 392,
 											"top": 24,
-											"width": 337,
+											"width": 321,
 											"height": 865,
 											"nameLabel": {
 												"$ref": "AAAAAAGTi9OOx0SIZPc="
