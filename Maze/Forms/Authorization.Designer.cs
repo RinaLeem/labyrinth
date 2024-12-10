@@ -42,12 +42,13 @@
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Font = new System.Drawing.Font("Montserrat ExtraBold", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(348, 66);
+            this.label1.Font = new System.Drawing.Font("Montserrat ExtraBold", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(360, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(382, 60);
+            this.label1.Size = new System.Drawing.Size(361, 60);
             this.label1.TabIndex = 0;
             this.label1.Text = "Авторизация";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AInputLogin
             // 
@@ -108,7 +109,7 @@
             this.label3.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.label3.Location = new System.Drawing.Point(78, 134);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(169, 23);
+            this.label3.Size = new System.Drawing.Size(366, 23);
             this.label3.TabIndex = 6;
             this.label3.Text = "Введите пароль:";
             // 
@@ -118,7 +119,7 @@
             this.label2.Font = new System.Drawing.Font("Montserrat", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(78, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 23);
+            this.label2.Size = new System.Drawing.Size(366, 23);
             this.label2.TabIndex = 8;
             this.label2.Text = "Введите логин:";
             // 
@@ -145,6 +146,8 @@
             this.Controls.Add(this.Reg);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Authorization";
             this.Text = "Авторизация";
             this.panel1.ResumeLayout(false);

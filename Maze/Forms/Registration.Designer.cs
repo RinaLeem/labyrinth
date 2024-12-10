@@ -43,12 +43,13 @@
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Font = new System.Drawing.Font("Montserrat ExtraBold", 28F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(360, 59);
+            this.label1.Font = new System.Drawing.Font("Montserrat ExtraBold", 22F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(300, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(375, 60);
+            this.label1.Size = new System.Drawing.Size(485, 60);
             this.label1.TabIndex = 0;
             this.label1.Text = "Регистрация";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // RInputLogin
             // 
@@ -95,7 +96,7 @@
             this.label2.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.label2.Location = new System.Drawing.Point(52, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 23);
+            this.label2.Size = new System.Drawing.Size(366, 23);
             this.label2.TabIndex = 5;
             this.label2.Text = "Введите логин:";
             // 
@@ -105,7 +106,7 @@
             this.label3.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.label3.Location = new System.Drawing.Point(52, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(195, 23);
+            this.label3.Size = new System.Drawing.Size(366, 23);
             this.label3.TabIndex = 6;
             this.label3.Text = "Введите пароль:";
             // 
@@ -115,7 +116,7 @@
             this.label5.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.label5.Location = new System.Drawing.Point(52, 205);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(260, 23);
+            this.label5.Size = new System.Drawing.Size(366, 23);
             this.label5.TabIndex = 8;
             this.label5.Text = "Повторите пароль:";
             // 
@@ -156,6 +157,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Registration";
             this.Text = "Регистрация";
             this.panel1.ResumeLayout(false);

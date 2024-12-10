@@ -1,5 +1,6 @@
 ﻿using Syroot.Windows.IO;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Net;
@@ -7,6 +8,8 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Linq;
+using System.Linq;
 using RadioButton = System.Windows.Forms.RadioButton;
 
 namespace Maze
@@ -116,7 +119,7 @@ namespace Maze
             customMessageBox.Text = "Справочная информация о разработчиках";
 
             Label label = new Label();
-            label.Text = "Самарский университет\nКафедра программных систем\n\nКурсовой проект по дисциплине 'Программная инженерия'\n\nТема проекта:\n«Автоматизированная система генерирования структуры лабиринта и нахождения выхода из него»\n\nРазработчики\nобучающиеся группы 6402-020302D:\n Балашова Екатерина\n Гриднева Виктория\n\nНаучный руководитель:\nЗеленко Лариса Сергеевна, доцент кафедры ПС\n\n\nСамара 2024";
+            label.Text = "Самарский университет\nКафедра программных систем\n\nКурсовой проект по дисциплине «Программная инженерия»\n\nТема проекта:\n«Автоматизированная система генерирования структуры лабиринта и нахождения выхода из него»\n\nРазработчики\nобучающиеся группы 6402-020302D:\n Балашова Екатерина\n Гриднева Виктория\n\nНаучный руководитель:\nЗеленко Лариса Сергеевна, доцент кафедры ПС\n\n\nСамара 2024";
             label.AutoSize = true;
             label.Font = new Font("Times New Roman", 11, FontStyle.Bold); // Настройки шрифта
             label.TextAlign = ContentAlignment.MiddleCenter; // Выравнивание текста по центру
@@ -323,16 +326,81 @@ namespace Maze
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Multiselect = false;
             openFileDialog.Filter = "XML файлы (*.xml)|*.xml";
-            openFileDialog.InitialDirectory = KnownFolders.Downloads.Path;
 
+            string applicationPath = AppDomain.CurrentDomain.BaseDirectory;
+            string mazesFolderPath = Path.Combine(applicationPath, "Mazes");
 
+            if (!Directory.Exists(mazesFolderPath))
+            {
+                Directory.CreateDirectory(mazesFolderPath);
+            }
+
+            openFileDialog.InitialDirectory = mazesFolderPath;
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                // Проверяем структуру файла перед загрузкой
+                if (!IsValidXmlStructure(openFileDialog.FileName))
+                {
+                    MessageBox.Show("Структура файла нарушена.");
+                    return;
+                }
+
                 FillWallsArray = ReadMatrixFromXml(openFileDialog.FileName);
                 StepForm = EStepForm.LOADEDMAZE;
                 DrawMaze();
                 MessageBox.Show("Лабиринт успешно загружен из файла!");
+            }
+        }
+
+        // Функция для проверки структуры XML-файла
+        private bool IsValidXmlStructure(string filePath)
+        {
+            try
+            {
+                XDocument doc = XDocument.Load(filePath);
+
+                // Проверяем наличие элемента Matrix
+                XElement matrixElement = doc.Element("Matrix");
+                if (matrixElement == null)
+                {
+                    return false;
+                }
+
+                // Проверяем наличие хотя бы одного элемента Row
+                IEnumerable<XElement> rows = matrixElement.Elements("Row");
+                if (!rows.Any())
+                {
+                    return false;
+                }
+
+                foreach (XElement row in rows)
+                {
+                    // Проверяем наличие хотя бы одной ячейки Cell
+                    IEnumerable<XElement> cells = row.Elements("Cell");
+                    if (!cells.Any())
+                    {
+                        return false;
+                    }
+
+                    foreach (XElement cell in cells)
+                    {
+                        // Проверяем значение каждой ячейки на допустимые значения True или False
+                        string value = cell.Value.Trim().ToLowerInvariant();
+                        if (value != "true" && value != "false")
+                        {
+                            return false;
+                        }
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Логируем исключение, если что-то пошло не так
+                Console.WriteLine($"Ошибка при проверке структуры XML: {ex.Message}");
+                return false;
             }
         }
 

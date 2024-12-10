@@ -7,6 +7,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml;
 
+
 namespace Maze
 {
     public partial class Admin : Form
@@ -60,9 +61,7 @@ namespace Maze
                     widthUpDown.Value = 15;
                     heightUpDown.Value = 15;
 
-
                     Generate.Visible = false; 
-
 
                     break;
                 case EStepForm.CREATEDTEMPLATE:
@@ -93,19 +92,15 @@ namespace Maze
                         (startPoint, endPoint) = RandomStartEndPoints(FillWallsArray);
                         DrawMaze();
                     }
-
-
                     break;
                 case EStepForm.EXPORTEDMAZE:
                     StepForm = EStepForm.NOTCREATETEMPLATE;
                     break;
-
             }
         }
         public Admin()
         {
             InitializeComponent();
-
         }
 
         private void createPattern_Click(object sender, EventArgs e)
@@ -116,8 +111,6 @@ namespace Maze
         }
         private bool[,] List2DToArray(List<List<bool>> listBoolean)
         {
-
-
             int rows = listBoolean.Count;
             int cols = listBoolean[0].Count;
 
@@ -134,7 +127,6 @@ namespace Maze
         }
         private void Generate_Click(object sender, EventArgs e)
         {
-
             if (radioButtonEuler.Checked)
             {
                 bool[,] maze = List2DToArray(MazeGeneratorEuler.GenerateMaze(gridWidth / 2, gridHeight / 2));
@@ -175,8 +167,8 @@ namespace Maze
         }
         private void DrawMaze(bool[,] mazeMatrix = null)
         {
-            float cellWidth = (float)pictureMaze.Width / gridWidth;
-            float cellHeight = (float)pictureMaze.Height / gridHeight;
+            float cellWidth = (float)Math.Floor((double)pictureMaze.Width / gridWidth);
+            float cellHeight = (float)Math.Floor((double)pictureMaze.Height / gridHeight);
 
             Pen wallPen = new Pen(Color.Black);
             SolidBrush cellBrush = new SolidBrush(Color.White);
@@ -191,7 +183,7 @@ namespace Maze
                 {
                     pictureMaze.Image.Dispose();
                 }
-                pictureMaze.Image = new Bitmap(pictureMaze.Width, pictureMaze.Height);
+                pictureMaze.Image = new Bitmap(pictureMaze.Width + 1, pictureMaze.Height + 1);
             }
             using (Graphics g = Graphics.FromImage(pictureMaze.Image))
             {
@@ -207,15 +199,11 @@ namespace Maze
                         int nextX = (int)((col + 1) * cellWidth);
                         int nextY = (int)((row + 1) * cellHeight);
 
-
                         g.FillRectangle(cellBrush, x, y, cellWidth, cellHeight);
-                        g.DrawRectangle(wallPen, x, y, nextX - x, nextY - y);
+                        g.DrawRectangle(wallPen, x, y, nextX - x - 1, nextY - y - 1);
 
                         if (FillWallsArray != null && FillWallsArray[row, col] == true)
                             g.FillRectangle(wallBrush, x, y, cellWidth, cellHeight);
-
-
-
                     }
                 }
 
@@ -233,8 +221,7 @@ namespace Maze
                     g.FillRectangle(endPointBrush, x, y, cellWidth, cellHeight);
                 }
 
-
-            }
+                            }
             pictureMaze.Invalidate();
 
         }
@@ -245,7 +232,7 @@ namespace Maze
             customMessageBox.Text = "Справочная информация о разработчиках";
 
             Label label = new Label();
-            label.Text = "Самарский университет\nКафедра программных систем\n\nКурсовой проект по дисциплине 'Программная инженерия'\n\nТема проекта:\n«Автоматизированная система генерирования структуры лабиринта и нахождения выхода из него»\n\nРазработчики\nобучающиеся группы 6402-020302D:\n Балашова Екатерина\n Гриднева Виктория\n\nНаучный руководитель:\nЗеленко Лариса Сергеевна, доцент кафедры ПС\n\n\nСамара 2024";
+            label.Text = "Самарский университет\nКафедра программных систем\n\nКурсовой проект по дисциплине «Программная инженерия»\n\nТема проекта:\n«Автоматизированная система генерирования структуры лабиринта и нахождения выхода из него»\n\nРазработчики\nобучающиеся группы 6402-020302D:\n Балашова Екатерина\n Гриднева Виктория\n\nНаучный руководитель:\nЗеленко Лариса Сергеевна, доцент кафедры ПС\n\n\nСамара 2024";
             label.AutoSize = true;
             label.Font = new Font("Times New Roman", 11, FontStyle.Bold); // Настройки шрифта
             label.TextAlign = ContentAlignment.MiddleCenter; // Выравнивание текста по центру
@@ -314,28 +301,35 @@ namespace Maze
                     MessageBox.Show("Расставьте точки входа и выхода!");
                     break;
                 case EStepForm.GENERATEDMAZE:
-                    SaveFileDialog saveFileDialog = new SaveFileDialog();
-                    saveFileDialog.Filter = "XML файлы (*.xml)|*.xml";
-                    saveFileDialog.InitialDirectory = KnownFolders.Downloads.Path;
+                    string applicationPath = AppDomain.CurrentDomain.BaseDirectory;
+                    string mazesFolderPath = Path.Combine(applicationPath, "Mazes");
+                    if (!Directory.Exists(mazesFolderPath))
+                    {
+                        Directory.CreateDirectory(mazesFolderPath);
+                    }
+
                     if (FillWallsArray is null || FillWallsArray?.Length == 0)
                     {
                         MessageBox.Show("Генерация лабиринта не выполнена!");
                         break;
                     }
 
-                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    using (var saveFileDialog = new SaveFileDialog())
                     {
-                        SaveMatrixToXml(saveFileDialog.FileName);
-                        StepForm = EStepForm.EXPORTEDMAZE;
+                        saveFileDialog.Filter = "XML файлы (*.xml)|*.xml";
+                        saveFileDialog.InitialDirectory = mazesFolderPath;
+
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            SaveMatrixToXml(saveFileDialog.FileName);
+                            StepForm = EStepForm.EXPORTEDMAZE;
+                        }
                     }
                     break;
             }
-
-
-
         }
 
-         
+
 
         private void pictureMaze_Click(object sender, EventArgs e)
         {
@@ -464,6 +458,24 @@ namespace Maze
         private void buttonTheme1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void heightUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (heightUpDown.Value % 2 == 0)
+            {
+                heightUpDown.Value++;  
+                //MessageBox.Show("Высота изменена на ближайшее нечётное значение.");
+            }
+        }
+
+        private void widthUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (widthUpDown.Value % 2 == 0)
+            {
+                widthUpDown.Value++;  
+                //MessageBox.Show("Ширина изменена на ближайшее нечётное значение.");
+            }
         }
     }
 }

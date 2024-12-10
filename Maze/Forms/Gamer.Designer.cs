@@ -353,10 +353,10 @@
             // 
             this.pictureMaze.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureMaze.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureMaze.Location = new System.Drawing.Point(607, 23);
+            this.pictureMaze.Location = new System.Drawing.Point(603, 25);
             this.pictureMaze.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureMaze.Name = "pictureMaze";
-            this.pictureMaze.Size = new System.Drawing.Size(489, 491);
+            this.pictureMaze.Size = new System.Drawing.Size(493, 464);
             this.pictureMaze.TabIndex = 28;
             this.pictureMaze.TabStop = false;
             // 

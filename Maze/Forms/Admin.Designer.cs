@@ -194,6 +194,7 @@
             0,
             0,
             0});
+            this.widthUpDown.ValueChanged += new System.EventHandler(this.widthUpDown_ValueChanged);
             // 
             // heightUpDown
             // 
@@ -224,15 +225,16 @@
             0,
             0,
             0});
+            this.heightUpDown.ValueChanged += new System.EventHandler(this.heightUpDown_ValueChanged);
             // 
             // pictureMaze
             // 
             this.pictureMaze.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureMaze.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureMaze.Location = new System.Drawing.Point(596, 11);
+            this.pictureMaze.Location = new System.Drawing.Point(587, 24);
             this.pictureMaze.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureMaze.Name = "pictureMaze";
-            this.pictureMaze.Size = new System.Drawing.Size(489, 490);
+            this.pictureMaze.Size = new System.Drawing.Size(493, 464);
             this.pictureMaze.TabIndex = 27;
             this.pictureMaze.TabStop = false;
             this.pictureMaze.Click += new System.EventHandler(this.pictureMaze_Click);
