@@ -432,6 +432,7 @@ namespace Maze
                 rdb.MouseUp += ModeRadioButtons_CheckedChanged;
             }
         }
+
         private void ThemeRadioButtons_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton radioButton = sender as RadioButton;

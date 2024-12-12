@@ -35,11 +35,12 @@ namespace Maze
 
             if (File.Exists(userFilePath) && File.Exists(adminFilePath))
             {
-                if (IsUserCredentialsValid(login, password, userFilePath, adminFilePath))
+                var errorType = CheckCredentials(login, password, userFilePath, adminFilePath);
+
+                if (errorType == CredentialError.None)
                 {
                     if (IsAdmin(login, password, adminFilePath))
                     {
-                        // Пользователь является администратором
                         MessageBox.Show("Вы успешно авторизовались.");
                         Admin adminForm = new Admin();
                         this.Hide();
@@ -47,7 +48,6 @@ namespace Maze
                     }
                     else
                     {
-                        // Пользователь является обычным пользователем
                         MessageBox.Show("Вы успешно авторизовались.");
                         Gamer gamerForm = new Gamer();
                         this.Hide();
@@ -56,13 +56,64 @@ namespace Maze
                 }
                 else
                 {
-                    MessageBox.Show("Неверные учетные данные или пользователь не найден.", "Ошибка авторизации");
+                    switch (errorType)
+                    {
+                        case CredentialError.LoginNotFound:
+                            MessageBox.Show("Логин не найден.", "Ошибка авторизации");
+                            break;
+                        case CredentialError.IncorrectPassword:
+                            MessageBox.Show("Неверный пароль.", "Ошибка авторизации");
+                            break;
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Файлы с учетными данными не найдены.", "Ошибка");
             }
+        }
+
+        private CredentialError CheckCredentials(string login, string password, string userFilePath, string adminFilePath)
+        {
+            // Проверяем, существует ли логин среди пользователей
+            bool loginExistsInUsers = File.Exists(userFilePath) && File.ReadAllLines(userFilePath)
+                .Any(line => line.Split(':')[0] == login);
+
+            bool loginExistsInAdmins = File.Exists(adminFilePath) && File.ReadAllLines(adminFilePath)
+                .Any(line => line.Split(':')[0] == login);
+
+            if (!loginExistsInUsers && !loginExistsInAdmins)
+            {
+                return CredentialError.LoginNotFound; // Логин не найден
+            }
+
+            // Проверяем корректность пароля
+            bool isPasswordCorrectForUser = File.Exists(userFilePath) &&
+                File.ReadAllLines(userFilePath)
+                .Any(line => line == $"{login}:{password}");
+
+            bool isPasswordCorrectForAdmin = File.Exists(adminFilePath) &&
+                File.ReadAllLines(adminFilePath)
+                .Any(line => line == $"{login}:{password}");
+
+            if (loginExistsInUsers || loginExistsInAdmins)
+            {
+                if (isPasswordCorrectForUser || isPasswordCorrectForAdmin)
+                {
+                    return CredentialError.None; // Все корректно
+                }
+
+                return CredentialError.IncorrectPassword; // Пароль неверный
+            }
+
+            return CredentialError.LoginNotFound;
+        }
+
+        private enum CredentialError
+        {
+            None,
+            LoginNotFound,
+            IncorrectPassword
         }
         private bool IsUserCredentialsValid(string login, string password, string userFilePath, string adminFilePath)
         {
