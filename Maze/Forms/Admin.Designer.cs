@@ -62,7 +62,7 @@
             // 
             this.AdminAboutUs.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AdminAboutUs.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.AdminAboutUs.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AdminAboutUs.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.AdminAboutUs.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.AdminAboutUs.Location = new System.Drawing.Point(22, 0);
             this.AdminAboutUs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -77,7 +77,7 @@
             // 
             this.AdminAboutSys.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AdminAboutSys.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.AdminAboutSys.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AdminAboutSys.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.AdminAboutSys.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.AdminAboutSys.Location = new System.Drawing.Point(277, 0);
             this.AdminAboutSys.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -91,7 +91,7 @@
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(22, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(527, 46);
@@ -103,7 +103,7 @@
             // 
             this.createPattern.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.createPattern.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.createPattern.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.createPattern.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.createPattern.ForeColor = System.Drawing.SystemColors.InfoText;
             this.createPattern.Location = new System.Drawing.Point(465, 108);
             this.createPattern.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -117,7 +117,7 @@
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.label2.Location = new System.Drawing.Point(22, 143);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(249, 23);
@@ -127,7 +127,7 @@
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.label3.Location = new System.Drawing.Point(22, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(249, 23);
@@ -138,7 +138,7 @@
             // 
             this.saveToFile.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.saveToFile.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.saveToFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.saveToFile.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.saveToFile.ForeColor = System.Drawing.SystemColors.InfoText;
             this.saveToFile.Location = new System.Drawing.Point(695, 551);
             this.saveToFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -153,7 +153,7 @@
             // 
             this.Generate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Generate.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Generate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.Generate.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.Generate.ForeColor = System.Drawing.SystemColors.MenuText;
             this.Generate.Location = new System.Drawing.Point(695, 505);
             this.Generate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -168,7 +168,7 @@
             // widthUpDown
             // 
             this.widthUpDown.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.widthUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.widthUpDown.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.widthUpDown.Increment = new decimal(new int[] {
             2,
             0,
@@ -187,7 +187,7 @@
             0,
             0});
             this.widthUpDown.Name = "widthUpDown";
-            this.widthUpDown.Size = new System.Drawing.Size(189, 26);
+            this.widthUpDown.Size = new System.Drawing.Size(189, 29);
             this.widthUpDown.TabIndex = 25;
             this.widthUpDown.Value = new decimal(new int[] {
             15,
@@ -199,7 +199,7 @@
             // heightUpDown
             // 
             this.heightUpDown.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.heightUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.heightUpDown.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.heightUpDown.Increment = new decimal(new int[] {
             2,
             0,
@@ -218,7 +218,7 @@
             0,
             0});
             this.heightUpDown.Name = "heightUpDown";
-            this.heightUpDown.Size = new System.Drawing.Size(189, 26);
+            this.heightUpDown.Size = new System.Drawing.Size(189, 29);
             this.heightUpDown.TabIndex = 26;
             this.heightUpDown.Value = new decimal(new int[] {
             15,
@@ -243,7 +243,7 @@
             // 
             this.radioButtonAldousBroder.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonAldousBroder.AutoSize = true;
-            this.radioButtonAldousBroder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonAldousBroder.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.radioButtonAldousBroder.Location = new System.Drawing.Point(13, 249);
             this.radioButtonAldousBroder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonAldousBroder.Name = "radioButtonAldousBroder";
@@ -257,11 +257,11 @@
             this.radioButtonEuler.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonEuler.AutoSize = true;
             this.radioButtonEuler.Checked = true;
-            this.radioButtonEuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonEuler.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.radioButtonEuler.Location = new System.Drawing.Point(13, 216);
             this.radioButtonEuler.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonEuler.Name = "radioButtonEuler";
-            this.radioButtonEuler.Size = new System.Drawing.Size(202, 29);
+            this.radioButtonEuler.Size = new System.Drawing.Size(199, 29);
             this.radioButtonEuler.TabIndex = 30;
             this.radioButtonEuler.TabStop = true;
             this.radioButtonEuler.Text = "Алгоритм Эйлера";
@@ -270,7 +270,7 @@
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(12, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(527, 46);
@@ -281,7 +281,7 @@
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label6.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(3, 163);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(527, 46);
@@ -311,7 +311,7 @@
             this.ThemeGroupBox.Controls.Add(this.radioButtonSP);
             this.ThemeGroupBox.Controls.Add(this.radioButtonSU);
             this.ThemeGroupBox.Controls.Add(this.radioButtonAU);
-            this.ThemeGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.ThemeGroupBox.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.ThemeGroupBox.Location = new System.Drawing.Point(8, 293);
             this.ThemeGroupBox.Name = "ThemeGroupBox";
             this.ThemeGroupBox.Size = new System.Drawing.Size(522, 100);
@@ -322,10 +322,10 @@
             // radioButtonWI
             // 
             this.radioButtonWI.AutoSize = true;
-            this.radioButtonWI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonWI.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.radioButtonWI.Location = new System.Drawing.Point(412, 43);
             this.radioButtonWI.Name = "radioButtonWI";
-            this.radioButtonWI.Size = new System.Drawing.Size(84, 29);
+            this.radioButtonWI.Size = new System.Drawing.Size(81, 29);
             this.radioButtonWI.TabIndex = 3;
             this.radioButtonWI.Text = "Зима";
             this.radioButtonWI.UseVisualStyleBackColor = true;
@@ -333,10 +333,10 @@
             // radioButtonSP
             // 
             this.radioButtonSP.AutoSize = true;
-            this.radioButtonSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonSP.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.radioButtonSP.Location = new System.Drawing.Point(285, 43);
             this.radioButtonSP.Name = "radioButtonSP";
-            this.radioButtonSP.Size = new System.Drawing.Size(87, 29);
+            this.radioButtonSP.Size = new System.Drawing.Size(90, 29);
             this.radioButtonSP.TabIndex = 2;
             this.radioButtonSP.Text = "Весна";
             this.radioButtonSP.UseVisualStyleBackColor = true;
@@ -344,10 +344,10 @@
             // radioButtonSU
             // 
             this.radioButtonSU.AutoSize = true;
-            this.radioButtonSU.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonSU.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.radioButtonSU.Location = new System.Drawing.Point(159, 43);
             this.radioButtonSU.Name = "radioButtonSU";
-            this.radioButtonSU.Size = new System.Drawing.Size(82, 29);
+            this.radioButtonSU.Size = new System.Drawing.Size(78, 29);
             this.radioButtonSU.TabIndex = 1;
             this.radioButtonSU.Text = "Лето";
             this.radioButtonSU.UseVisualStyleBackColor = true;
@@ -356,10 +356,10 @@
             // 
             this.radioButtonAU.AutoSize = true;
             this.radioButtonAU.Checked = true;
-            this.radioButtonAU.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonAU.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.radioButtonAU.Location = new System.Drawing.Point(23, 43);
             this.radioButtonAU.Name = "radioButtonAU";
-            this.radioButtonAU.Size = new System.Drawing.Size(90, 29);
+            this.radioButtonAU.Size = new System.Drawing.Size(91, 29);
             this.radioButtonAU.TabIndex = 0;
             this.radioButtonAU.TabStop = true;
             this.radioButtonAU.Text = "Осень";
@@ -369,7 +369,7 @@
             // 
             this.nonhanded.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nonhanded.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.nonhanded.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.nonhanded.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.nonhanded.ForeColor = System.Drawing.SystemColors.MenuText;
             this.nonhanded.Location = new System.Drawing.Point(18, 103);
             this.nonhanded.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -384,7 +384,7 @@
             // 
             this.handed.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.handed.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.handed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.handed.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.handed.ForeColor = System.Drawing.SystemColors.MenuText;
             this.handed.Location = new System.Drawing.Point(18, 48);
             this.handed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

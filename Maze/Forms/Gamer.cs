@@ -45,7 +45,8 @@ namespace Maze
             switch (StepForm)
             {
                 case EStepForm.UNLOADMAZE:
-                    ModePassGroupBox.Visible = true;
+
+                    ModePassGroupBox.Visible = false;
                     pictureMaze.Image = null;
                     pictureMaze.Invalidate();
                     pictureBox2.Enabled = false;
@@ -71,6 +72,7 @@ namespace Maze
                     ModePassGroupBox.Visible = true;
                     pictureBox2.Enabled = false;
                     pictureBox2.Visible = false;
+                    textBegining.Visible = false;
                     gridWidth = (uint)FillWallsArray.GetLength(1);
                     gridHeight = (uint)FillWallsArray.GetLength(0);
                     startGame.Visible = true;
@@ -78,6 +80,8 @@ namespace Maze
                     trackBarSpeed.Enabled = true;
                     radioButtonHands.Checked = true;
                     radioButtonAU.Checked = true;
+                    ThemeGBox.Visible = true;
+                    labelChoice.Visible = true;
                     ThemeRadioButtons_CheckedChanged(radioButtonAU, null);
                     ModeRadioButtons_CheckedChanged(radioButtonHands, null);
                     break;
@@ -90,16 +94,16 @@ namespace Maze
                     startGame.Enabled = false;
                     trackBarSpeed.Visible = false;
                     trackBarSpeed.Enabled = false;
+                    ThemeGBox.Visible = false;
+                    labelChoice.Visible = false;
                     pictureMaze.Focus();
                     if (radioButtonAuto.Checked)
                         AutoPassMaze();
                     break;
                 case EStepForm.ENDPASS:
-
                     startGame.Visible = false;
                     startGame.Enabled = false;
                     break;
-
             }
         }
 
@@ -183,7 +187,6 @@ namespace Maze
         }
         private void MoveCharacter(int cellRowIndex, int cellColumnIndex)
         {
-
             if (FillWallsArray is null || FillWallsArray?.Length == 0)
                 return;
             float cellWidth = (float)pictureMaze.Width / gridWidth;
@@ -195,6 +198,7 @@ namespace Maze
             {
                 MessageBox.Show("Лабиринт пройден!");
                 clearAll();
+                textBegining.Visible = true;
             }
         }
 
@@ -259,8 +263,6 @@ namespace Maze
             if (FillWallsArray is null || FillWallsArray?.Length == 0)
                 return;
 
-
-
             float cellWidth = (float)pictureMaze.Width / gridWidth;
             float cellHeight = (float)pictureMaze.Height / gridHeight;
 
@@ -279,7 +281,6 @@ namespace Maze
             }
             using (Graphics g = Graphics.FromImage(pictureMaze.Image))
             {
-
                 g.Clear(Color.White);
                 for (int row = 0; row < gridHeight; row++)
                 {
@@ -299,7 +300,6 @@ namespace Maze
                         {
                             g.FillRectangle(wallBrush, x, y, cellWidth, cellHeight);
                         }
-
                     }
                 }
                 if (startPoint != null)
@@ -316,10 +316,7 @@ namespace Maze
                     g.FillRectangle(endPointBrush, x, y, cellWidth, cellHeight);
                 }
             }
-
-
             pictureMaze.Invalidate();
-
         }
         private void outputMazeFile_Click(object sender, EventArgs e)
         {
@@ -393,7 +390,6 @@ namespace Maze
                         }
                     }
                 }
-
                 return true;
             }
             catch (Exception ex)
@@ -472,12 +468,13 @@ namespace Maze
                         label3.Visible = false;
                         label4.Visible = false;
                         trackBarSpeed.Visible = false;
+                        algorithmGroupBox.Visible = false;
                         break;
                     case "radioButtonAuto":
                         label3.Visible = true;
                         label4.Visible = true;
                         trackBarSpeed.Visible = true;
-
+                        algorithmGroupBox.Visible = true;
                         break;
                 }
             }
@@ -542,22 +539,13 @@ namespace Maze
 
                 for (int i = 0; i < path.GetLength(0); i++)
                 {
-
                     await Task.Delay(1000 / trackBarSpeed.Value);
                     MoveCharacter(path[i, 0], path[i, 1]);
-
-
                 }
                 await Task.Delay(1000 / trackBarSpeed.Value);
                 MoveCharacter((int)endPoint?.X, (int)endPoint?.Y);
             }
-
-
-
-
         }
-
     }
-
 }
 
