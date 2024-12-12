@@ -113,14 +113,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Gamer.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Title": "Gamer.cs [Design]",
               "DocumentMoniker": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Gamer.cs",
               "RelativeDocumentMoniker": "Maze\\Forms\\Gamer.cs",
-              "ToolTip": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Gamer.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "Maze\\Forms\\Gamer.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "ToolTip": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Gamer.cs [Design]",
+              "RelativeToolTip": "Maze\\Forms\\Gamer.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T07:49:16.933Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
