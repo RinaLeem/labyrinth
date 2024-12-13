@@ -183,7 +183,7 @@ namespace Maze
                 {
                     pictureMaze.Image.Dispose();
                 }
-                pictureMaze.Image = new Bitmap(pictureMaze.Width + 1, pictureMaze.Height + 1);
+                pictureMaze.Image = new Bitmap(pictureMaze.Width, pictureMaze.Height);
             }
             using (Graphics g = Graphics.FromImage(pictureMaze.Image))
             {
