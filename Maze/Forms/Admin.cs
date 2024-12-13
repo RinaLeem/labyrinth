@@ -228,19 +228,23 @@ namespace Maze
         private void AdminAboutUs_Click(object sender, EventArgs e)
         {
             Form customMessageBox = new Form();
-            customMessageBox.Size = new Size(825, 350);
+            customMessageBox.Size = new Size(850, 400);
             customMessageBox.Text = "Справочная информация о разработчиках";
+            customMessageBox.MaximizeBox = false;
+            customMessageBox.MinimizeBox = false;
+            customMessageBox.FormBorderStyle = FormBorderStyle.FixedDialog;
 
             Label label = new Label();
             label.Text = "Самарский университет\nКафедра программных систем\n\nКурсовой проект по дисциплине «Программная инженерия»\n\nТема проекта:\n«Автоматизированная система генерирования структуры лабиринта и нахождения выхода из него»\n\nРазработчики\nобучающиеся группы 6402-020302D:\n Балашова Екатерина\n Гриднева Виктория\n\nНаучный руководитель:\nЗеленко Лариса Сергеевна, доцент кафедры ПС\n\n\nСамара 2024";
             label.AutoSize = true;
-            label.Font = new Font("Times New Roman", 11, FontStyle.Bold); // Настройки шрифта
+            label.Font = new Font("Monserrat", 11, FontStyle.Bold); // Настройки шрифта
             label.TextAlign = ContentAlignment.MiddleCenter; // Выравнивание текста по центру
             label.Dock = DockStyle.Fill; // Занимает всю доступную площадь
             customMessageBox.Controls.Add(label);
 
             customMessageBox.ShowDialog();
         }
+
 
         private void AdminAboutSys_Click(object sender, EventArgs e)
         {
