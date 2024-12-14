@@ -187,7 +187,6 @@ namespace Maze
             }
             using (Graphics g = Graphics.FromImage(pictureMaze.Image))
             {
-
                 g.Clear(Color.White);
                 for (int row = 0; row < gridHeight; row++)
                 {
@@ -244,8 +243,6 @@ namespace Maze
 
             customMessageBox.ShowDialog();
         }
-
-
         private void AdminAboutSys_Click(object sender, EventArgs e)
         {
             string htmlFilePath = $@"{Environment.CurrentDirectory}\admin.html";
@@ -332,9 +329,6 @@ namespace Maze
                     break;
             }
         }
-
-
-
         private void pictureMaze_Click(object sender, EventArgs e)
         {
             float cellWidth = (float)pictureMaze.Width / gridWidth;
@@ -383,7 +377,6 @@ namespace Maze
 
 
         }
-
 
         private void handed_Click(object sender, EventArgs e)
         {
@@ -454,16 +447,7 @@ namespace Maze
                 }
             }
         }
-        private void ModeRadioButtons_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonTheme1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void heightUpDown_ValueChanged(object sender, EventArgs e)
         {
             if (heightUpDown.Value % 2 == 0)
