@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Maze.exe" size="185832">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Maze.exe" size="186344">
       <assemblyIdentity name="Maze" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>h5MATrWvcYuR/tuVzqN8cNWHYmH+MquUEL3kokWk4bQ=</dsig:DigestValue>
+        <dsig:DigestValue>N9KHbIvzN9Pod2Iy9a8VgsNSEGjFXF3M26b1fFnil7M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -5,12 +5,8 @@ using System.Reflection;
 
 namespace Maze
 {
-
-
     public class MazeGeneratorAldousBroder
     {
-
-
         private List<List<bool>> area;
         private bool hole = false;
         private bool wall = true;

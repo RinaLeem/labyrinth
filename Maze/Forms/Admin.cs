@@ -57,18 +57,13 @@ namespace Maze
                     endPoint = null;
                     gridWidth = default;
                     gridHeight = default;
-
                     widthUpDown.Value = 15;
                     heightUpDown.Value = 15;
-
                     Generate.Visible = false; 
 
                     break;
                 case EStepForm.CREATEDTEMPLATE:
-                    if (buttonAutoExit)
-                        Generate.Visible = true;
-                    else
-                        Generate.Visible = false;
+                    Generate.Visible = false;
                     startPoint = null;
                     endPoint = null;
                     FillWallsArray = null;
@@ -89,7 +84,6 @@ namespace Maze
                 case EStepForm.GENERATEDMAZE:
                     if (buttonAutoExit)
                     {
-                        (startPoint, endPoint) = RandomStartEndPoints(FillWallsArray);
                         DrawMaze();
                     }
                     break;
@@ -331,17 +325,23 @@ namespace Maze
         }
         private void pictureMaze_Click(object sender, EventArgs e)
         {
-            float cellWidth = (float)pictureMaze.Width / gridWidth;
-            float cellHeight = (float)pictureMaze.Height / gridHeight;
+            // Получаем ширину и высоту одной ячейки
+            float cellWidth = (float)Math.Floor((double)pictureMaze.Width / gridWidth);
+            float cellHeight = (float)Math.Floor((double)pictureMaze.Height / gridHeight);
+
+
+            // Получаем ширину и высоту одной ячейки
             MouseEventArgs me = (MouseEventArgs)e;
-            int cellRowIndex = Convert.ToInt32(Math.Floor(me.Y / cellHeight));
-            int cellColumnIndex = Convert.ToInt32(Math.Floor(me.X / cellWidth));
+
+            // Рассчитываем индексы строки и столбца, на которые указывает клик
+            int cellRowIndex = (int)Math.Floor((me.Y - pictureMaze.ClientRectangle.Top) / cellHeight);
+            int cellColumnIndex = (int)Math.Floor((me.X - pictureMaze.ClientRectangle.Left) / cellWidth);
 
             switch (StepForm)
             {
                 case EStepForm.BEGINSETPOINTS:
 
-                    if (cellRowIndex > 0 && cellRowIndex < gridHeight - 1 && cellColumnIndex == 0)
+                    if (cellRowIndex > 0 && cellRowIndex < gridHeight && cellColumnIndex == 0)
                     {
                         startPoint = new Point(cellRowIndex, cellColumnIndex);
                         DrawMaze(FillWallsArray);
@@ -355,7 +355,7 @@ namespace Maze
 
                     break;
                 case EStepForm.SETPOINTENTRY:
-                    if (cellRowIndex > 0 && cellRowIndex < gridHeight - 1 && cellColumnIndex == gridWidth - 1)
+                    if (cellRowIndex > 0 && cellRowIndex < gridHeight && cellColumnIndex == gridWidth - 1)
                     {
                         endPoint = new Point(cellRowIndex, cellColumnIndex);
                         DrawMaze(FillWallsArray);
@@ -365,17 +365,13 @@ namespace Maze
                     }
                     else
                     {
-                        MessageBox.Show("Нужна точка по правому боковому периметру без угла.");
+                        MessageBox.Show("Нужна точка по правому боковому периметру.");
                     }
-
                     break;
                 case EStepForm.ENDSETPOINTS:
                     MessageBox.Show("Точки входа и выхода расставлены!");
                     break;
-
             }
-
-
         }
 
         private void handed_Click(object sender, EventArgs e)
@@ -399,12 +395,18 @@ namespace Maze
             buttonAutoExit = true;
 
             if (gridWidth > 0 && gridHeight > 0)
-                StepForm = EStepForm.CREATEDTEMPLATE;
+            {
+                (startPoint, endPoint) = RandomStartEndPoints(FillWallsArray ?? new bool[gridHeight, gridWidth]);
+                DrawMaze(FillWallsArray);
+                MessageBox.Show("Вход и выход расставлены автоматически.");
+                StepForm = EStepForm.GENERATEDMAZE;
+                Generate.Visible = true;
+            }
             else
+            {
+                MessageBox.Show("Создайте шаблон лабиринта перед автоматической расстановкой.");
                 StepForm = EStepForm.NOTCREATETEMPLATE;
-            startPoint = null;
-            endPoint = null;
-            DrawMaze();
+            }
         }
 
         private void Gamer_Load(object sender, EventArgs e)
@@ -465,5 +467,6 @@ namespace Maze
                 //MessageBox.Show("Ширина изменена на ближайшее нечётное значение.");
             }
         }
+
     }
 }

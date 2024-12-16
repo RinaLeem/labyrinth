@@ -28,6 +28,7 @@ namespace Maze
         private bool[,] FillWallsArray;
         private Point? startPoint = null;
         private Point? endPoint = null;
+        private bool[,] visitedCells;
         private uint gridWidth;
         private uint gridHeight;
         private EStepForm _stepForm = EStepForm.UNLOADMAZE;
@@ -75,6 +76,7 @@ namespace Maze
                     textBegining.Visible = false;
                     gridWidth = (uint)FillWallsArray.GetLength(1);
                     gridHeight = (uint)FillWallsArray.GetLength(0);
+                    visitedCells = new bool[gridHeight, gridWidth];
                     startGame.Visible = true;
                     startGame.Enabled = true;
                     trackBarSpeed.Enabled = true;
@@ -192,11 +194,36 @@ namespace Maze
         {
             if (FillWallsArray is null || FillWallsArray?.Length == 0)
                 return;
+
+            // Обновляем координаты персонажа
             float cellWidth = (float)pictureMaze.Width / gridWidth;
             float cellHeight = (float)pictureMaze.Height / gridHeight;
             pictureBox2.Left = Convert.ToInt32(cellColumnIndex * cellWidth + 0.5f);
             pictureBox2.Top = Convert.ToInt32(cellRowIndex * cellHeight + 0.5f);
 
+            // Обновляем состояние ячейки
+            if (radioButtonHands.Checked)
+            {
+                // В ручном режиме
+                if (!visitedCells[cellRowIndex, cellColumnIndex])
+                { // Заливаем текущую ячейку
+                    visitedCells[cellRowIndex, cellColumnIndex] = true;
+                    //visitedCells[cellRowIndex, cellColumnIndex] = !visitedCells[cellRowIndex, cellColumnIndex];
+
+                    DrawMaze(); // Перерисовываем лабиринт
+                }
+            }
+            else if (radioButtonAuto.Checked)
+            {
+                // В автоматическом режиме
+                if (!visitedCells[cellRowIndex, cellColumnIndex])
+                {
+                    visitedCells[cellRowIndex, cellColumnIndex] = true; // Заливаем текущую ячейку
+                    DrawMaze(); // Перерисовываем лабиринт
+                }
+            }
+
+            // Проверка на конец лабиринта
             if ((cellRowIndex, cellColumnIndex) == (endPoint?.X, endPoint?.Y))
             {
                 MessageBox.Show("Лабиринт пройден!");
@@ -272,8 +299,9 @@ namespace Maze
             Pen wallPen = new Pen(Color.Black);
             SolidBrush cellBrush = new SolidBrush(Color.White);
             SolidBrush startPointBrush = new SolidBrush(Color.GreenYellow);
-
             SolidBrush endPointBrush = new SolidBrush(Color.Red);
+            SolidBrush pathBrush = new SolidBrush(Color.Blue); // Цвет для пути
+
             if (pictureMaze.Image == null || pictureMaze.Image.Width != pictureMaze.Width || pictureMaze.Image.Height != pictureMaze.Height)
             {
                 if (pictureMaze.Image != null)
@@ -299,12 +327,19 @@ namespace Maze
                         g.FillRectangle(cellBrush, x, y, cellWidth, cellHeight);
                         g.DrawRectangle(wallPen, x, y, nextX - x, nextY - y);
 
+                        // Рисуем стены
                         if (FillWallsArray != null && FillWallsArray[row, col] == true)
                         {
                             g.FillRectangle(wallBrush, x, y, cellWidth, cellHeight);
                         }
+                        // Рисуем посещенные ячейки
+                        if (visitedCells[row, col])
+                        {
+                            g.FillRectangle(pathBrush, x, y, cellWidth, cellHeight);
+                        }
                     }
                 }
+                // Рисуем начальную и конечную точки
                 if (startPoint != null)
                 {
                     int x = (int)(startPoint?.Y * cellWidth);
