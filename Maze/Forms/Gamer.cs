@@ -11,9 +11,11 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Linq;
 using RadioButton = System.Windows.Forms.RadioButton;
+using System.Diagnostics;
 
 namespace Maze
 {
+
     public partial class Gamer : Form
     {
         private protected enum EStepForm : sbyte
@@ -140,15 +142,39 @@ namespace Maze
 
         private void aboutSys_Click(object sender, EventArgs e)
         {
-            string htmlFilePath = $@"{Environment.CurrentDirectory}\gamer.html";
+            ////string htmlFilePath = $@"{Environment.CurrentDirectory}\кр.html";
+            //string htmlFilePath = $@"{Environment.CurrentDirectory}\кр.html";
+            ////Image image = Image.FromFile(@"Resources\mario.png");
 
-            if (File.Exists(htmlFilePath))
+            //if (File.Exists(htmlFilePath))
+            //{
+            //    System.Diagnostics.Process.Start(htmlFilePath);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Файл не найден", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            // Указываем путь к файлу HTML в папке Resources
+            string htmlFilePath = Path.Combine(Environment.CurrentDirectory, "Resources", "кр.html");
+
+            try
             {
-                System.Diagnostics.Process.Start(htmlFilePath);
+                if (File.Exists(htmlFilePath))
+                {
+                    System.Diagnostics.Process.Start(new ProcessStartInfo
+                    {
+                        FileName = htmlFilePath,
+                        UseShellExecute = true // Используем оболочку для открытия файла
+                    });
+                }
+                else
+                {
+                    MessageBox.Show("Файл не найден: " + htmlFilePath, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Файл не найден", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Произошла ошибка при открытии файла: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -190,9 +216,13 @@ namespace Maze
             if ((cellRowIndex, cellColumnIndex + 1) == (endPoint?.X, endPoint?.Y))
                 MoveCharacter(cellRowIndex, cellColumnIndex + 1);
         }
+
+        private Stack<(int row, int col)> pathStack = new Stack<(int row, int col)>();
+        private (int row, int col) lastCell = (-1, -1);
+
         private void MoveCharacter(int cellRowIndex, int cellColumnIndex)
         {
-            if (FillWallsArray is null || FillWallsArray?.Length == 0)
+            if (FillWallsArray is null || FillWallsArray.Length == 0)
                 return;
 
             // Обновляем координаты персонажа
@@ -201,36 +231,79 @@ namespace Maze
             pictureBox2.Left = Convert.ToInt32(cellColumnIndex * cellWidth + 0.5f);
             pictureBox2.Top = Convert.ToInt32(cellRowIndex * cellHeight + 0.5f);
 
-            // Обновляем состояние ячейки
-            if (radioButtonHands.Checked)
+            // Проверяем, если персонаж вернулся назад
+            if (lastCell.row != -1 && lastCell.col != -1)
             {
-                // В ручном режиме
-                if (!visitedCells[cellRowIndex, cellColumnIndex])
-                { // Заливаем текущую ячейку
-                    visitedCells[cellRowIndex, cellColumnIndex] = true;
-                    //visitedCells[cellRowIndex, cellColumnIndex] = !visitedCells[cellRowIndex, cellColumnIndex];
-
+                // Если текущая ячейка не равна последней ячейке
+                if (cellRowIndex == lastCell.row && cellColumnIndex == lastCell.col)
+                {
+                    // Перекрашиваем последнюю ячейку в белый цвет
+                    visitedCells[lastCell.row, lastCell.col] = false; // Окрашиваем в белый цвет
                     DrawMaze(); // Перерисовываем лабиринт
                 }
             }
-            else if (radioButtonAuto.Checked)
+
+            // Обновляем состояние ячейки
+            if (radioButtonHands.Checked || radioButtonAuto.Checked)
             {
-                // В автоматическом режиме
                 if (!visitedCells[cellRowIndex, cellColumnIndex])
                 {
-                    visitedCells[cellRowIndex, cellColumnIndex] = true; // Заливаем текущую ячейку
-                    DrawMaze(); // Перерисовываем лабиринт
+                    // Если ячейка не посещалась, заливаем её и добавляем в стек
+                    visitedCells[cellRowIndex, cellColumnIndex] = true;
+                    pathStack.Push((cellRowIndex, cellColumnIndex));
+                    DrawMaze();
+                }
+                else
+                {
+                    // Проверяем, если текущая ячейка - последняя в стеке (возврат по пути)
+                    if (pathStack.Count > 0 && pathStack.Peek() == (cellRowIndex, cellColumnIndex))
+                    {
+                        // Удаляем из стека и окрашиваем в дефолтный цвет
+                        pathStack.Pop();
+                        visitedCells[cellRowIndex, cellColumnIndex] = false; // Окрашиваем в белый цвет
+                        DrawMaze(); // Перерисовываем лабиринт
+                    }
                 }
             }
 
-            // Проверка на конец лабиринта
-            if ((cellRowIndex, cellColumnIndex) == (endPoint?.X, endPoint?.Y))
-            {
-                MessageBox.Show("Лабиринт пройден!");
-                clearAll();
-                textBegining.Visible = true;
-            }
+            // Сохраняем текущую ячейку как последнюю
+            lastCell = (cellRowIndex, cellColumnIndex);
         }
+
+
+        //private void MoveCharacter(int cellRowIndex, int cellColumnIndex)
+        //{
+        //    if (FillWallsArray is null || FillWallsArray?.Length == 0)
+        //        return;
+
+        //    // Обновляем координаты персонажа
+        //    float cellWidth = (float)pictureMaze.Width / gridWidth;
+        //    float cellHeight = (float)pictureMaze.Height / gridHeight;
+        //    pictureBox2.Left = Convert.ToInt32(cellColumnIndex * cellWidth + 0.5f);
+        //    pictureBox2.Top = Convert.ToInt32(cellRowIndex * cellHeight + 0.5f);
+
+        //    // Обновляем состояние ячейки
+        //    if (radioButtonHands.Checked)
+        //    {
+        //        // В ручном режиме
+        //        if (!visitedCells[cellRowIndex, cellColumnIndex])
+        //        { // Заливаем текущую ячейку
+        //            visitedCells[cellRowIndex, cellColumnIndex] = true;
+        //            //visitedCells[cellRowIndex, cellColumnIndex] = !visitedCells[cellRowIndex, cellColumnIndex];
+
+        //            DrawMaze(); // Перерисовываем лабиринт
+        //        }
+        //    }
+        //    else if (radioButtonAuto.Checked)
+        //    {
+        //        // В автоматическом режиме
+        //        if (!visitedCells[cellRowIndex, cellColumnIndex])
+        //        {
+        //            visitedCells[cellRowIndex, cellColumnIndex] = true; // Заливаем текущую ячейку
+        //            DrawMaze(); // Перерисовываем лабиринт
+        //        }
+        //    }
+        //}
 
         private bool[,] ReadMatrixFromXml(string filePath)
         {
@@ -300,7 +373,7 @@ namespace Maze
             SolidBrush cellBrush = new SolidBrush(Color.White);
             SolidBrush startPointBrush = new SolidBrush(Color.GreenYellow);
             SolidBrush endPointBrush = new SolidBrush(Color.Red);
-            SolidBrush pathBrush = new SolidBrush(Color.Blue); // Цвет для пути
+            SolidBrush pathBrush = new SolidBrush(Color.Brown); // Цвет для пути
 
             if (pictureMaze.Image == null || pictureMaze.Image.Width != pictureMaze.Width || pictureMaze.Image.Height != pictureMaze.Height)
             {
@@ -322,7 +395,6 @@ namespace Maze
 
                         int nextX = (int)((col + 1) * cellWidth);
                         int nextY = (int)((row + 1) * cellHeight);
-
 
                         g.FillRectangle(cellBrush, x, y, cellWidth, cellHeight);
                         g.DrawRectangle(wallPen, x, y, nextX - x, nextY - y);

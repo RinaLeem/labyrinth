@@ -2,6 +2,7 @@
 using Syroot.Windows.IO;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -239,15 +240,36 @@ namespace Maze
         }
         private void AdminAboutSys_Click(object sender, EventArgs e)
         {
-            string htmlFilePath = $@"{Environment.CurrentDirectory}\admin.html";
+            //string htmlFilePath = $@"{Environment.CurrentDirectory}\admin.html";
 
-            if (File.Exists(htmlFilePath))
+            //if (File.Exists(htmlFilePath))
+            //{
+            //    System.Diagnostics.Process.Start(htmlFilePath);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Файл не найден", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            string htmlFilePath = Path.Combine(Environment.CurrentDirectory, "Resources", "кр.html");
+
+            try
             {
-                System.Diagnostics.Process.Start(htmlFilePath);
+                if (File.Exists(htmlFilePath))
+                {
+                    System.Diagnostics.Process.Start(new ProcessStartInfo
+                    {
+                        FileName = htmlFilePath,
+                        UseShellExecute = true // Используем оболочку для открытия файла
+                    });
+                }
+                else
+                {
+                    MessageBox.Show("Файл не найден: " + htmlFilePath, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Файл не найден", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Произошла ошибка при открытии файла: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private bool SaveMatrixToXml(string filePath)
