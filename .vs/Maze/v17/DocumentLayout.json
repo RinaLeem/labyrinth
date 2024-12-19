@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\7_semestr\\Labirint\\labyrinth\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|D:\\7_semestr\\Labirint\\labyrinth\\maze\\forms\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|D:\\7_semestr\\Labirint\\labyrinth\\maze\\forms\\gamer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|solutionrelative:maze\\forms\\gamer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|d:\\7_semestr\\labirint\\labyrinth\\maze\\forms\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|solutionrelative:maze\\forms\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|D:\\7_semestr\\Labirint\\labyrinth\\maze\\forms\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|solutionrelative:maze\\forms\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|d:\\7_semestr\\labirint\\labyrinth\\maze\\forms\\gamer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|solutionrelative:maze\\forms\\gamer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|D:\\7_semestr\\Labirint\\labyrinth\\maze\\forms\\gamer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -54,17 +54,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Gamer.cs",
               "DocumentMoniker": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Gamer.cs",
               "RelativeDocumentMoniker": "Maze\\Forms\\Gamer.cs",
               "ToolTip": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Gamer.cs",
               "RelativeToolTip": "Maze\\Forms\\Gamer.cs",
-              "ViewState": "AQIAAJwAAAAAAAAAAAAQwLEAAAANAAAA",
+              "ViewState": "AQIAAMsBAAAAAAAAAAAAAOMBAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-17T12:19:19.746Z",
               "EditorCaption": ""
@@ -131,25 +131,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Admin.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentIndex": 2,
+              "Title": "Admin.cs [Design]",
               "DocumentMoniker": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Admin.cs",
               "RelativeDocumentMoniker": "Maze\\Forms\\Admin.cs",
-              "ToolTip": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Admin.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "Maze\\Forms\\Admin.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "ToolTip": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Admin.cs [Design]",
+              "RelativeToolTip": "Maze\\Forms\\Admin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T07:49:16.926Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Admin.cs",
               "DocumentMoniker": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Admin.cs",
               "RelativeDocumentMoniker": "Maze\\Forms\\Admin.cs",
               "ToolTip": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Admin.cs",
               "RelativeToolTip": "Maze\\Forms\\Admin.cs",
-              "ViewState": "AQIAAPcAAAAAAAAAAAAYwBABAAANAAAA",
+              "ViewState": "AQIAAFsBAAAAAAAAAAAkwDsBAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T07:49:16.928Z",
               "EditorCaption": ""

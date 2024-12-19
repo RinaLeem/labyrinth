@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Maze.exe" size="185856">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Maze.exe" size="186880">
       <assemblyIdentity name="Maze" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9+dmET1wEwkwarKHqzOAXynJMnqPSKm4v2HGjdM9FfY=</dsig:DigestValue>
+        <dsig:DigestValue>eKGyWCRay61mgNHLLCHceJCklhCDXg7ZlaDz5/PF5TQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -77,22 +77,22 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Maze.exe.config" size="189">
+  <file name="Maze.exe.config" size="184">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+      <dsig:DigestValue>X+GtgC9o18R9u9jmAWK6iKuu0WLaXTgchdPkk1MRli4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Resources\кр.html" size="519">
+  <file name="Resources\кр.html" size="501">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ZbUWHlzoLVKH6Xtr0OOEEocJ7dTBge2lVYyQOMEeEj0=</dsig:DigestValue>
+      <dsig:DigestValue>/P9ywI81Worb1I/xZ0tXi98Puej5CHK2aJjA8aEoMSo=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
