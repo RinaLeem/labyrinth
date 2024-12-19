@@ -15,7 +15,6 @@ using System.Diagnostics;
 
 namespace Maze
 {
-
     public partial class Gamer : Form
     {
         private protected enum EStepForm : sbyte
@@ -24,15 +23,19 @@ namespace Maze
             LOADEDMAZE,
             BEGANPASS,
             ENDPASS
-
         }
         SolidBrush wallBrush = new SolidBrush(Color.Orange);
         private bool[,] FillWallsArray;
+
         private Point? startPoint = null;
-        private Point? endPoint = null;
-        private bool[,] visitedCells;
+        private Point? endPoint = null;        
+
         private uint gridWidth;
         private uint gridHeight;
+
+        private bool[,] visitedCells;
+        private LinkedList<(int, int)> pathLinkedList;
+
         private EStepForm _stepForm = EStepForm.UNLOADMAZE;
         private protected EStepForm StepForm
         {
@@ -79,6 +82,7 @@ namespace Maze
                     gridWidth = (uint)FillWallsArray.GetLength(1);
                     gridHeight = (uint)FillWallsArray.GetLength(0);
                     visitedCells = new bool[gridHeight, gridWidth];
+                    pathLinkedList = new LinkedList<(int, int)>();
                     startGame.Visible = true;
                     startGame.Enabled = true;
                     trackBarSpeed.Enabled = true;
@@ -110,7 +114,6 @@ namespace Maze
                     break;
             }
         }
-
         public Gamer()
         {
             InitializeComponent();
@@ -142,21 +145,7 @@ namespace Maze
 
         private void aboutSys_Click(object sender, EventArgs e)
         {
-            ////string htmlFilePath = $@"{Environment.CurrentDirectory}\кр.html";
-            //string htmlFilePath = $@"{Environment.CurrentDirectory}\кр.html";
-            ////Image image = Image.FromFile(@"Resources\mario.png");
-
-            //if (File.Exists(htmlFilePath))
-            //{
-            //    System.Diagnostics.Process.Start(htmlFilePath);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Файл не найден", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            // Указываем путь к файлу HTML в папке Resources
             string htmlFilePath = Path.Combine(Environment.CurrentDirectory, "Resources", "кр.html");
-
             try
             {
                 if (File.Exists(htmlFilePath))
@@ -177,12 +166,10 @@ namespace Maze
                 MessageBox.Show("Произошла ошибка при открытии файла: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void Gamer_KeyDown(object sender, KeyEventArgs e)
         {
             if (FillWallsArray is null || FillWallsArray?.Length == 0)
                 return;
-
             float cellWidth = (float)pictureMaze.Width / gridWidth;
             float cellHeight = (float)pictureMaze.Height / gridHeight;
 
@@ -216,125 +203,176 @@ namespace Maze
             if ((cellRowIndex, cellColumnIndex + 1) == (endPoint?.X, endPoint?.Y))
                 MoveCharacter(cellRowIndex, cellColumnIndex + 1);
         }
-
-        private Stack<(int row, int col)> pathStack = new Stack<(int row, int col)>();
-        private (int row, int col) lastCell = (-1, -1);
-
         private void MoveCharacter(int cellRowIndex, int cellColumnIndex)
         {
             if (FillWallsArray is null || FillWallsArray.Length == 0)
                 return;
 
-            // Обновляем координаты персонажа
+            // Обновление позиции персонажа
             float cellWidth = (float)pictureMaze.Width / gridWidth;
             float cellHeight = (float)pictureMaze.Height / gridHeight;
             pictureBox2.Left = Convert.ToInt32(cellColumnIndex * cellWidth + 0.5f);
             pictureBox2.Top = Convert.ToInt32(cellRowIndex * cellHeight + 0.5f);
 
-            // Проверяем, если персонаж вернулся назад
-            if (lastCell.row != -1 && lastCell.col != -1)
+            var currentPosition = (cellRowIndex, cellColumnIndex);
+
+            if (pathLinkedList.Count > 0 && pathLinkedList.Last.Value == currentPosition)
             {
-                // Если текущая ячейка не равна последней ячейке
-                if (cellRowIndex == lastCell.row && cellColumnIndex == lastCell.col)
-                {
-                    // Перекрашиваем последнюю ячейку в белый цвет
-                    visitedCells[lastCell.row, lastCell.col] = false; // Окрашиваем в белый цвет
-                    DrawMaze(); // Перерисовываем лабиринт
-                }
+                // Если игрок возвращается в клетку, которая уже была добавлена последней, ничего не делаем
+                return;
             }
 
-            // Обновляем состояние ячейки
-            if (radioButtonHands.Checked || radioButtonAuto.Checked)
+            // Проверяем, был ли игрок уже в этой клетке
+            if (pathLinkedList.Contains(currentPosition))
             {
-                if (!visitedCells[cellRowIndex, cellColumnIndex])
+                // Пошаговое удаление следа до текущей позиции
+                while (pathLinkedList.Last.Value != currentPosition)
                 {
-                    // Если ячейка не посещалась, заливаем её и добавляем в стек
-                    visitedCells[cellRowIndex, cellColumnIndex] = true;
-                    pathStack.Push((cellRowIndex, cellColumnIndex));
-                    DrawMaze();
-                }
-                else
-                {
-                    // Проверяем, если текущая ячейка - последняя в стеке (возврат по пути)
-                    if (pathStack.Count > 0 && pathStack.Peek() == (cellRowIndex, cellColumnIndex))
-                    {
-                        // Удаляем из стека и окрашиваем в дефолтный цвет
-                        pathStack.Pop();
-                        visitedCells[cellRowIndex, cellColumnIndex] = false; // Окрашиваем в белый цвет
-                        DrawMaze(); // Перерисовываем лабиринт
-                    }
-                }
-                if ((cellRowIndex, cellColumnIndex) == (endPoint?.X, endPoint?.Y))
-                {
-                    MessageBox.Show("Лабиринт пройден!");
-                    clearAll();
+                    var removedCell = pathLinkedList.Last.Value;
+                    visitedCells[removedCell.Item1, removedCell.Item2] = false;
+                    pathLinkedList.RemoveLast();
+                    DrawMaze(); // Перерисовываем лабиринт после каждого шага назад
                 }
             }
+            else
+            {
+                // Добавляем новую клетку
+                pathLinkedList.AddLast(currentPosition);
+                visitedCells[cellRowIndex, cellColumnIndex] = true;
+            }
 
-            // Сохраняем текущую ячейку как последнюю
-            lastCell = (cellRowIndex, cellColumnIndex);
+            DrawMaze();
+
+            // Проверяем достижение цели
+            if ((cellRowIndex, cellColumnIndex) == (endPoint?.X, endPoint?.Y))
+            {
+                MessageBox.Show("Лабиринт пройден!");
+                clearAll();
+            }
         }
 
-        // тут код с исччезновением следа и окном лабиринт пройден
-        //private Stack<(int row, int col)> pathStack = new Stack<(int row, int col)>();
-        //private (int row, int col) lastCell = (-1, -1);
+        private void DrawMaze()
+        {
+            if (FillWallsArray is null || FillWallsArray?.Length == 0)
+                return;
 
-        //private void MoveCharacter(int cellRowIndex, int cellColumnIndex)
-        //{
-        //    if (FillWallsArray is null || FillWallsArray.Length == 0)
-        //        return;
+            float cellWidth = (float)pictureMaze.Width / gridWidth;
+            float cellHeight = (float)pictureMaze.Height / gridHeight;
 
-        //    // Обновляем координаты персонажа
-        //    float cellWidth = (float)pictureMaze.Width / gridWidth;
-        //    float cellHeight = (float)pictureMaze.Height / gridHeight;
-        //    pictureBox2.Left = Convert.ToInt32(cellColumnIndex * cellWidth + 0.5f);
-        //    pictureBox2.Top = Convert.ToInt32(cellRowIndex * cellHeight + 0.5f);
+            Pen wallPen = new Pen(Color.Black);
+            SolidBrush cellBrush = new SolidBrush(Color.White);
+            SolidBrush startPointBrush = new SolidBrush(Color.GreenYellow);
+            SolidBrush endPointBrush = new SolidBrush(Color.Red);
+            SolidBrush pathBrush = new SolidBrush(Color.Brown); // Цвет для пути
 
-        //    // Проверяем, если персонаж вернулся назад
-        //    if (lastCell.row != -1 && lastCell.col != -1)
-        //    {
-        //        // Если текущая ячейка не равна последней ячейке
-        //        if (cellRowIndex == lastCell.row && cellColumnIndex == lastCell.col)
-        //        {
-        //            // Перекрашиваем последнюю ячейку в белый цвет
-        //            visitedCells[lastCell.row, lastCell.col] = false; // Окрашиваем в белый цвет
-        //            DrawMaze(); // Перерисовываем лабиринт
-        //        }
-        //    }
+            int fontSize = (int)cellWidth - (int)(cellWidth/3); // Размер символов
 
-        //    // Обновляем состояние ячейки
-        //    if (radioButtonHands.Checked || radioButtonAuto.Checked)
-        //    {
-        //        if (!visitedCells[cellRowIndex, cellColumnIndex])
-        //        {
-        //            // Если ячейка не посещалась, заливаем её и добавляем в стек
-        //            visitedCells[cellRowIndex, cellColumnIndex] = true;
-        //            pathStack.Push((cellRowIndex, cellColumnIndex));
-        //            DrawMaze();
-        //        }
-        //        else
-        //        {
-        //            // Проверяем, если текущая ячейка - последняя в стеке (возврат по пути)
-        //            if (pathStack.Count > 0 && pathStack.Peek() == (cellRowIndex, cellColumnIndex))
-        //            {
-        //                // Удаляем из стека и окрашиваем в дефолтный цвет
-        //                pathStack.Pop();
-        //                visitedCells[cellRowIndex, cellColumnIndex] = false; // Окрашиваем в белый цвет
-        //                DrawMaze(); // Перерисовываем лабиринт
-        //            }
-        //        }
-        //        if ((cellRowIndex, cellColumnIndex) == (endPoint?.X, endPoint?.Y))
-        //        {
-        //            MessageBox.Show("Лабиринт пройден!");
-        //            clearAll();
-        //        }
-        //    }
+            // Создаем кисть и шрифт для снежинки
+            Font snowflakeFont = new Font("Arial", fontSize); 
+            SolidBrush snowflakeBrush = new SolidBrush(Color.Blue); // Цвет 
 
-        //    // Сохраняем текущую ячейку как последнюю
-        //    lastCell = (cellRowIndex, cellColumnIndex);
-        //}
+            // Создаем кисть и шрифт для цветочка
+            Font springFont = new Font("Arial", fontSize); 
+            SolidBrush springBrush = new SolidBrush(Color.Red); // Цвет 
 
+            // Создаем кисть и шрифт для солнца
+            Font summerFont = new Font("Arial", fontSize); 
+            SolidBrush summerBrush = new SolidBrush(Color.GreenYellow); // Цвет 
 
+            // Создаем кисть и шрифт для карандаша
+            Font auFont = new Font("Arial", fontSize); 
+            SolidBrush auBrush = new SolidBrush(Color.Yellow); // Цвет 
+
+            if (pictureMaze.Image == null || pictureMaze.Image.Width != pictureMaze.Width || pictureMaze.Image.Height != pictureMaze.Height)
+            {
+                if (pictureMaze.Image != null)
+                {
+                    pictureMaze.Image.Dispose();
+                }
+                pictureMaze.Image = new Bitmap(pictureMaze.Width, pictureMaze.Height);
+            }
+
+            using (Graphics g = Graphics.FromImage(pictureMaze.Image))
+            {
+                g.Clear(Color.White);
+                for (int row = 0; row < gridHeight; row++)
+                {
+                    for (int col = 0; col < gridWidth; col++)
+                    {
+                        int x = (int)(col * cellWidth);
+                        int y = (int)(row * cellHeight);
+
+                        int nextX = (int)((col + 1) * cellWidth);
+                        int nextY = (int)((row + 1) * cellHeight);
+
+                        g.FillRectangle(cellBrush, x, y, cellWidth, cellHeight);
+                        g.DrawRectangle(wallPen, x, y, nextX - x, nextY - y);
+
+                        // Рисуем стену
+                        if (FillWallsArray != null && FillWallsArray[row, col] == true)
+                        {
+                            g.FillRectangle(wallBrush, x, y, cellWidth, cellHeight);
+
+                            // Если цвет стены Aqua, добавляем снежинку
+                            if (wallBrush.Color == Color.Aqua)
+                            {
+                                string snowflakeSymbol = "❄";
+                                SizeF snowflakeSize = g.MeasureString(snowflakeSymbol, snowflakeFont);
+                                float snowflakeX = x + (cellWidth - snowflakeSize.Width) / 2;
+                                float snowflakeY = y + (cellHeight - snowflakeSize.Height) / 2;
+                                g.DrawString(snowflakeSymbol, snowflakeFont, snowflakeBrush, snowflakeX, snowflakeY);
+                            }
+                            // Если цвет стены Pink, добавляем цветочек ❀
+                            if (wallBrush.Color == Color.Pink)
+                            {
+                                string springSymbol = "❀"; // Эмодзи цветка
+                                SizeF springSize = g.MeasureString(springSymbol, springFont);
+                                float springX = x + (cellWidth - springSize.Width) / 2;
+                                float springY = y + (cellHeight - springSize.Height) / 2;
+                                g.DrawString(springSymbol, springFont, springBrush, springX, springY);
+                            }
+                            // Если цвет стены Green, добавляем цветочек ❅✰
+                            if (wallBrush.Color == Color.Green)
+                            {
+                                string summerSymbol = "✸"; // Эмодзи цветка
+                                SizeF summerSize = g.MeasureString(summerSymbol, summerFont);
+                                float summerX = x + (cellWidth - summerSize.Width) / 2;
+                                float summerY = y + (cellHeight - summerSize.Height) / 2;
+                                g.DrawString(summerSymbol, summerFont, summerBrush, summerX, summerY);
+                            }
+                            // Если цвет стены Orange, добавляем карандаш ❅✰
+                            if (wallBrush.Color == Color.Orange)
+                            {
+                                string auSymbol = "✎"; // Эмодзи цветка
+                                SizeF auSize = g.MeasureString(auSymbol, summerFont);
+                                float auX = x + (cellWidth - auSize.Width) / 2;
+                                float auY = y + (cellHeight - auSize.Height) / 2;
+                                g.DrawString(auSymbol, auFont, auBrush, auX, auY);
+                            }
+                        }
+                        // Рисуем посещенные ячейки
+                        if (visitedCells[row, col])
+                        {
+                            g.FillRectangle(pathBrush, x, y, cellWidth, cellHeight);
+                        }
+                    }
+                }
+                // Рисуем начальную и конечную точки
+                if (startPoint != null)
+                {
+                    int startX = (int)(startPoint?.Y * cellWidth);
+                    int startY = (int)(startPoint?.X * cellHeight);
+                    g.FillRectangle(startPointBrush, startX, startY, cellWidth, cellHeight);
+                }
+                if (endPoint != null)
+                {
+                    int endX = (int)(endPoint?.Y * cellWidth);
+                    int endY = (int)(endPoint?.X * cellHeight);
+                    g.FillRectangle(endPointBrush, endX, endY, cellWidth, cellHeight);
+                }
+            }
+            pictureMaze.Invalidate();
+        }
         private bool[,] ReadMatrixFromXml(string filePath)
         {
             XmlReader XMLReader = XmlReader.Create(filePath);
@@ -391,200 +429,6 @@ namespace Maze
 
             return matrix;
         }
-        private void DrawMaze()
-        {
-            if (FillWallsArray is null || FillWallsArray?.Length == 0)
-                return;
-
-            float cellWidth = (float)pictureMaze.Width / gridWidth;
-            float cellHeight = (float)pictureMaze.Height / gridHeight;
-
-            Pen wallPen = new Pen(Color.Black);
-            SolidBrush cellBrush = new SolidBrush(Color.White);
-            SolidBrush startPointBrush = new SolidBrush(Color.GreenYellow);
-            SolidBrush endPointBrush = new SolidBrush(Color.Red);
-            SolidBrush pathBrush = new SolidBrush(Color.Brown); // Цвет для пути
-
-            // Создаем кисть и шрифт для снежинки
-            Font snowflakeFont = new Font("Arial", 16); // Вы можете изменить размер шрифта по необходимости
-            SolidBrush snowflakeBrush = new SolidBrush(Color.Blue); // Цвет снежинки
-
-            // Создаем кисть и шрифт для цветочка
-            Font springFont = new Font("Arial", 16); // Вы можете изменить размер шрифта по необходимости
-            SolidBrush springBrush = new SolidBrush(Color.Red); // Цвет цветка
-
-            // Создаем кисть и шрифт для цветочка
-            Font summerFont = new Font("Arial", 16); // Вы можете изменить размер шрифта по необходимости
-            SolidBrush summerBrush = new SolidBrush(Color.GreenYellow); // Цвет цветка
-
-            // Создаем кисть и шрифт для звездочки
-            Font auFont = new Font("Arial", 16); // Вы можете изменить размер шрифта по необходимости
-            SolidBrush auBrush = new SolidBrush(Color.Yellow); // Цвет цвезвездочкитка
-
-            if (pictureMaze.Image == null || pictureMaze.Image.Width != pictureMaze.Width || pictureMaze.Image.Height != pictureMaze.Height)
-            {
-                if (pictureMaze.Image != null)
-                {
-                    pictureMaze.Image.Dispose();
-                }
-                pictureMaze.Image = new Bitmap(pictureMaze.Width, pictureMaze.Height);
-            }
-
-            using (Graphics g = Graphics.FromImage(pictureMaze.Image))
-            {
-                g.Clear(Color.White);
-                for (int row = 0; row < gridHeight; row++)
-                {
-                    for (int col = 0; col < gridWidth; col++)
-                    {
-                        int x = (int)(col * cellWidth);
-                        int y = (int)(row * cellHeight);
-
-                        int nextX = (int)((col + 1) * cellWidth);
-                        int nextY = (int)((row + 1) * cellHeight);
-
-                        g.FillRectangle(cellBrush, x, y, cellWidth, cellHeight);
-                        g.DrawRectangle(wallPen, x, y, nextX - x, nextY - y);
-
-                        // Рисуем стену
-                        if (FillWallsArray != null && FillWallsArray[row, col] == true)
-                        {
-                            g.FillRectangle(wallBrush, x, y, cellWidth, cellHeight);
-
-                            // Если цвет стены Aqua, добавляем снежинку
-                            if (wallBrush.Color == Color.Aqua)
-                            {
-                                string snowflakeSymbol = "❄";
-                                SizeF snowflakeSize = g.MeasureString(snowflakeSymbol, snowflakeFont);
-                                float snowflakeX = x + (cellWidth - snowflakeSize.Width) / 2;
-                                float snowflakeY = y + (cellHeight - snowflakeSize.Height) / 2;
-                                g.DrawString(snowflakeSymbol, snowflakeFont, snowflakeBrush, snowflakeX, snowflakeY);
-                            }
-                            // Если цвет стены Pink, добавляем цветочек
-                            if (wallBrush.Color == Color.Pink)
-                            {
-                                string springSymbol = "❀"; // Эмодзи цветка
-                                SizeF springSize = g.MeasureString(springSymbol, springFont);
-                                float springX = x + (cellWidth - springSize.Width) / 2;
-                                float springY = y + (cellHeight - springSize.Height) / 2;
-                                g.DrawString(springSymbol, springFont, springBrush, springX, springY);
-                            }
-                            // Если цвет стены Green, добавляем цветочек ❅✰
-                            if (wallBrush.Color == Color.Green)
-                            {
-                                string summerSymbol = "✸"; // Эмодзи цветка
-                                SizeF summerSize = g.MeasureString(summerSymbol, summerFont);
-                                float summerX = x + (cellWidth - summerSize.Width) / 2;
-                                float summerY = y + (cellHeight - summerSize.Height) / 2;
-                                g.DrawString(summerSymbol, summerFont, summerBrush, summerX, summerY);
-                            }
-                            // Если цвет стены Green, добавляем цветочек ❅✰
-                            if (wallBrush.Color == Color.Orange)
-                            {
-                                string auSymbol = "✎"; // Эмодзи цветка
-                                SizeF auSize = g.MeasureString(auSymbol, summerFont);
-                                float auX = x + (cellWidth - auSize.Width) / 2;
-                                float auY = y + (cellHeight - auSize.Height) / 2;
-                                g.DrawString(auSymbol, auFont, auBrush, auX, auY);
-                            }
-                        }
-
-                        // Рисуем посещенные ячейки
-                        if (visitedCells[row, col])
-                        {
-                            g.FillRectangle(pathBrush, x, y, cellWidth, cellHeight);
-                        }
-                    }
-                }
-
-                // Рисуем начальную и конечную точки
-                if (startPoint != null)
-                {
-                    int startX = (int)(startPoint?.Y * cellWidth);
-                    int startY = (int)(startPoint?.X * cellHeight);
-                    g.FillRectangle(startPointBrush, startX, startY, cellWidth, cellHeight);
-                }
-
-                if (endPoint != null)
-                {
-                    int endX = (int)(endPoint?.Y * cellWidth);
-                    int endY = (int)(endPoint?.X * cellHeight);
-                    g.FillRectangle(endPointBrush, endX, endY, cellWidth, cellHeight);
-                }
-            }
-
-            pictureMaze.Invalidate();
-        }
-
-
-        // тут рабочий код к movecharacter c "тут код с исччезновением следа и окном лабиринт пройден"
-        //private void DrawMaze()
-        //{
-        //    if (FillWallsArray is null || FillWallsArray?.Length == 0)
-        //        return;
-
-        //    float cellWidth = (float)pictureMaze.Width / gridWidth;
-        //    float cellHeight = (float)pictureMaze.Height / gridHeight;
-
-        //    Pen wallPen = new Pen(Color.Black);
-        //    SolidBrush cellBrush = new SolidBrush(Color.White);
-        //    SolidBrush startPointBrush = new SolidBrush(Color.GreenYellow);
-        //    SolidBrush endPointBrush = new SolidBrush(Color.Red);
-        //    SolidBrush pathBrush = new SolidBrush(Color.Brown); // Цвет для пути
-
-        //    if (pictureMaze.Image == null || pictureMaze.Image.Width != pictureMaze.Width || pictureMaze.Image.Height != pictureMaze.Height)
-        //    {
-        //        if (pictureMaze.Image != null)
-        //        {
-        //            pictureMaze.Image.Dispose();
-        //        }
-        //        pictureMaze.Image = new Bitmap(pictureMaze.Width, pictureMaze.Height);
-        //    }
-        //    using (Graphics g = Graphics.FromImage(pictureMaze.Image))
-        //    {
-        //        g.Clear(Color.White);
-        //        for (int row = 0; row < gridHeight; row++)
-        //        {
-        //            for (int col = 0; col < gridWidth; col++)
-        //            {
-        //                int x = (int)(col * cellWidth);
-        //                int y = (int)(row * cellHeight);
-
-        //                int nextX = (int)((col + 1) * cellWidth);
-        //                int nextY = (int)((row + 1) * cellHeight);
-
-        //                g.FillRectangle(cellBrush, x, y, cellWidth, cellHeight);
-        //                g.DrawRectangle(wallPen, x, y, nextX - x, nextY - y);
-
-        //                // Рисуем стены
-        //                if (FillWallsArray != null && FillWallsArray[row, col] == true)
-        //                {
-        //                    g.FillRectangle(wallBrush, x, y, cellWidth, cellHeight);
-        //                }
-        //                // Рисуем посещенные ячейки
-        //                if (visitedCells[row, col])
-        //                {
-        //                    g.FillRectangle(pathBrush, x, y, cellWidth, cellHeight);
-        //                }
-        //            }
-        //        }
-        //        // Рисуем начальную и конечную точки
-        //        if (startPoint != null)
-        //        {
-        //            int x = (int)(startPoint?.Y * cellWidth);
-        //            int y = (int)(startPoint?.X * cellHeight);
-        //            g.FillRectangle(startPointBrush, x, y, cellWidth, cellHeight);
-        //        }
-
-        //        if (endPoint != null)
-        //        {
-        //            int x = (int)(endPoint?.Y * cellWidth);
-        //            int y = (int)(endPoint?.X * cellHeight);
-        //            g.FillRectangle(endPointBrush, x, y, cellWidth, cellHeight);
-        //        }
-        //    }
-        //    pictureMaze.Invalidate();
-        //}
 
         private void outputMazeFile_Click(object sender, EventArgs e)
         {

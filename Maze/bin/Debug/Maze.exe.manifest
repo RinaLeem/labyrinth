@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>eKGyWCRay61mgNHLLCHceJCklhCDXg7ZlaDz5/PF5TQ=</dsig:DigestValue>
+        <dsig:DigestValue>3P/mvoBaaOkKN5D/OMFlGdTCvJa41JwjXn2YlvOn+Yo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -77,22 +77,22 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Maze.exe.config" size="184">
+  <file name="Maze.exe.config" size="189">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>X+GtgC9o18R9u9jmAWK6iKuu0WLaXTgchdPkk1MRli4=</dsig:DigestValue>
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Resources\кр.html" size="501">
+  <file name="Resources\кр.html" size="519">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>/P9ywI81Worb1I/xZ0tXi98Puej5CHK2aJjA8aEoMSo=</dsig:DigestValue>
+      <dsig:DigestValue>ZbUWHlzoLVKH6Xtr0OOEEocJ7dTBge2lVYyQOMEeEj0=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
