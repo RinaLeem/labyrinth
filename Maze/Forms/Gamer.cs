@@ -340,7 +340,7 @@ namespace Maze
                                 float summerY = y + (cellHeight - summerSize.Height) / 2;
                                 g.DrawString(summerSymbol, summerFont, summerBrush, summerX, summerY);
                             }
-                            // Если цвет стены Orange, добавляем карандаш ❅✰
+                            // Если цвет стены Orange, добавляем карандаш 
                             if (wallBrush.Color == Color.Orange)
                             {
                                 string auSymbol = "✎"; // Эмодзи цветка
@@ -657,6 +657,11 @@ namespace Maze
                 await Task.Delay(1000 / trackBarSpeed.Value);
                 MoveCharacter((int)endPoint?.X, (int)endPoint?.Y);
             }
+        }
+
+        private void radioButtonAU_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

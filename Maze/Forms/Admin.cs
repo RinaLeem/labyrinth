@@ -160,6 +160,91 @@ namespace Maze
 
             return new Tuple<Point, Point>(startPoint, endPoint);
         }
+        //private void DrawMaze(bool[,] mazeMatrix = null)
+        //{
+        //    float cellWidth = (float)Math.Floor((double)pictureMaze.Width / gridWidth);
+        //    float cellHeight = (float)Math.Floor((double)pictureMaze.Height / gridHeight);
+
+        //    Pen wallPen = new Pen(Color.Black);
+        //    SolidBrush cellBrush = new SolidBrush(Color.White);
+        //    //SolidBrush wallBrush = new SolidBrush(Color.Orange);
+        //    SolidBrush startPointBrush = new SolidBrush(Color.GreenYellow);
+        //    SolidBrush endPointBrush = new SolidBrush(Color.Red);
+
+        //    ////
+        //    int fontSize = (int)cellWidth - (int)(cellWidth / 3); // Размер символов
+
+        //    // Создаем кисть и шрифт для снежинки
+        //    Font snowflakeFont = new Font("Arial", fontSize);
+        //    SolidBrush snowflakeBrush = new SolidBrush(Color.Blue); // Цвет 
+
+        //    // Создаем кисть и шрифт для цветочка
+        //    Font springFont = new Font("Arial", fontSize);
+        //    SolidBrush springBrush = new SolidBrush(Color.Red); // Цвет 
+
+        //    // Создаем кисть и шрифт для солнца
+        //    Font summerFont = new Font("Arial", fontSize);
+        //    SolidBrush summerBrush = new SolidBrush(Color.GreenYellow); // Цвет 
+
+        //    // Создаем кисть и шрифт для карандаша
+        //    Font auFont = new Font("Arial", fontSize);
+        //    SolidBrush auBrush = new SolidBrush(Color.Yellow); // Цвет 
+        //    //
+
+
+
+
+
+        //    FillWallsArray = mazeMatrix is null ? FillWallsArray is null ? null : FillWallsArray : mazeMatrix;
+        //    if (pictureMaze.Image == null || pictureMaze.Image.Width != pictureMaze.Width || pictureMaze.Image.Height != pictureMaze.Height)
+        //    {
+        //        if (pictureMaze.Image != null)
+        //        {
+        //            pictureMaze.Image.Dispose();
+        //        }
+        //        pictureMaze.Image = new Bitmap(pictureMaze.Width, pictureMaze.Height);
+        //    }
+        //    using (Graphics g = Graphics.FromImage(pictureMaze.Image))
+        //    {
+        //        g.Clear(Color.White);
+        //        for (int row = 0; row < gridHeight; row++)
+        //        {
+        //            for (int col = 0; col < gridWidth; col++)
+        //            {
+        //                int x = (int)(col * cellWidth);
+        //                int y = (int)(row * cellHeight);
+
+        //                int nextX = (int)((col + 1) * cellWidth);
+        //                int nextY = (int)((row + 1) * cellHeight);
+
+        //                g.FillRectangle(cellBrush, x, y, cellWidth, cellHeight);
+        //                g.DrawRectangle(wallPen, x, y, nextX - x - 1, nextY - y - 1);
+
+        //                // Рисуем стену
+        //                if (FillWallsArray != null && FillWallsArray[row, col] == true)
+        //                    g.FillRectangle(wallBrush, x, y, cellWidth, cellHeight);
+        //            }
+        //        }
+
+        //        if (startPoint != null)
+        //        {
+        //            int x = (int)(startPoint?.Y * cellWidth);
+        //            int y = (int)(startPoint?.X * cellHeight);
+        //            g.FillRectangle(startPointBrush, x, y, cellWidth, cellHeight);
+        //        }
+
+        //        if (endPoint != null)
+        //        {
+        //            int x = (int)(endPoint?.Y * cellWidth);
+        //            int y = (int)(endPoint?.X * cellHeight);
+        //            g.FillRectangle(endPointBrush, x, y, cellWidth, cellHeight);
+        //        }
+
+        //                    }
+        //    pictureMaze.Invalidate();
+
+        //}
+
         private void DrawMaze(bool[,] mazeMatrix = null)
         {
             float cellWidth = (float)Math.Floor((double)pictureMaze.Width / gridWidth);
@@ -167,11 +252,30 @@ namespace Maze
 
             Pen wallPen = new Pen(Color.Black);
             SolidBrush cellBrush = new SolidBrush(Color.White);
-            //SolidBrush wallBrush = new SolidBrush(Color.Orange);
             SolidBrush startPointBrush = new SolidBrush(Color.GreenYellow);
             SolidBrush endPointBrush = new SolidBrush(Color.Red);
 
+            // Убедимся, что cellWidth больше 0 перед вычислением fontSize
+            int fontSize = Math.Max(1, (int)cellWidth - (int)(cellWidth / 3)); // Минимальный размер шрифта 1
+
+            // Создаем кисть и шрифт для снежинки
+            Font snowflakeFont = new Font("Arial", fontSize);
+            SolidBrush snowflakeBrush = new SolidBrush(Color.Blue); // Цвет 
+
+            // Создаем кисть и шрифт для цветочка
+            Font springFont = new Font("Arial", fontSize);
+            SolidBrush springBrush = new SolidBrush(Color.Red); // Цвет 
+
+            // Создаем кисть и шрифт для солнца
+            Font summerFont = new Font("Arial", fontSize);
+            SolidBrush summerBrush = new SolidBrush(Color.GreenYellow); // Цвет 
+
+            // Создаем кисть и шрифт для карандаша
+            Font auFont = new Font("Arial", fontSize);
+            SolidBrush auBrush = new SolidBrush(Color.Yellow); // Цвет 
+
             FillWallsArray = mazeMatrix is null ? FillWallsArray is null ? null : FillWallsArray : mazeMatrix;
+
             if (pictureMaze.Image == null || pictureMaze.Image.Width != pictureMaze.Width || pictureMaze.Image.Height != pictureMaze.Height)
             {
                 if (pictureMaze.Image != null)
@@ -180,6 +284,7 @@ namespace Maze
                 }
                 pictureMaze.Image = new Bitmap(pictureMaze.Width, pictureMaze.Height);
             }
+
             using (Graphics g = Graphics.FromImage(pictureMaze.Image))
             {
                 g.Clear(Color.White);
@@ -196,8 +301,48 @@ namespace Maze
                         g.FillRectangle(cellBrush, x, y, cellWidth, cellHeight);
                         g.DrawRectangle(wallPen, x, y, nextX - x - 1, nextY - y - 1);
 
+                        // Рисуем стену
                         if (FillWallsArray != null && FillWallsArray[row, col] == true)
+                        {
                             g.FillRectangle(wallBrush, x, y, cellWidth, cellHeight);
+
+                            // Если цвет стены Aqua, добавляем снежинку
+                            if (wallBrush.Color == Color.Aqua)
+                            {
+                                string snowflakeSymbol = "❄";
+                                SizeF snowflakeSize = g.MeasureString(snowflakeSymbol, snowflakeFont);
+                                float snowflakeX = x + (cellWidth - snowflakeSize.Width) / 2;
+                                float snowflakeY = y + (cellHeight - snowflakeSize.Height) / 2;
+                                g.DrawString(snowflakeSymbol, snowflakeFont, snowflakeBrush, snowflakeX, snowflakeY);
+                            }
+                            // Если цвет стены Pink, добавляем цветочек ❀
+                            if (wallBrush.Color == Color.Pink)
+                            {
+                                string springSymbol = "❀"; // Эмодзи цветка
+                                SizeF springSize = g.MeasureString(springSymbol, springFont);
+                                float springX = x + (cellWidth - springSize.Width) / 2;
+                                float springY = y + (cellHeight - springSize.Height) / 2;
+                                g.DrawString(springSymbol, springFont, springBrush, springX, springY);
+                            }
+                            // Если цвет стены Green, добавляем цветочек ❅✰
+                            if (wallBrush.Color == Color.Green)
+                            {
+                                string summerSymbol = "✸"; // Эмодзи цветка
+                                SizeF summerSize = g.MeasureString(summerSymbol, summerFont);
+                                float summerX = x + (cellWidth - summerSize.Width) / 2;
+                                float summerY = y + (cellHeight - summerSize.Height) / 2;
+                                g.DrawString(summerSymbol, summerFont, summerBrush, summerX, summerY);
+                            }
+                            // Если цвет стены Orange, добавляем карандаш 
+                            if (wallBrush.Color == Color.Orange)
+                            {
+                                string auSymbol = "✎"; // Эмодзи цветка
+                                SizeF auSize = g.MeasureString(auSymbol, summerFont);
+                                float auX = x + (cellWidth - auSize.Width) / 2;
+                                float auY = y + (cellHeight - auSize.Height) / 2;
+                                g.DrawString(auSymbol, auFont, auBrush, auX, auY);
+                            }
+                        }
                     }
                 }
 
@@ -214,11 +359,11 @@ namespace Maze
                     int y = (int)(endPoint?.X * cellHeight);
                     g.FillRectangle(endPointBrush, x, y, cellWidth, cellHeight);
                 }
+            }
 
-                            }
             pictureMaze.Invalidate();
-
         }
+
         private void AdminAboutUs_Click(object sender, EventArgs e)
         {
             Form customMessageBox = new Form();
