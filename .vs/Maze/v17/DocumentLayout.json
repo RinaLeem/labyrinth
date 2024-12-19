@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "D:\\7_semestr\\Labirint\\labyrinth\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|D:\\7_semestr\\Labirint\\labyrinth\\maze\\forms\\gamer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|solutionrelative:maze\\forms\\gamer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|d:\\7_semestr\\labirint\\labyrinth\\maze\\forms\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|D:\\7_semestr\\Labirint\\labyrinth\\maze\\forms\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|solutionrelative:maze\\forms\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|D:\\7_semestr\\Labirint\\labyrinth\\maze\\forms\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|solutionrelative:maze\\forms\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|d:\\7_semestr\\labirint\\labyrinth\\maze\\forms\\gamer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|solutionrelative:maze\\forms\\gamer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|D:\\7_semestr\\Labirint\\labyrinth\\maze\\forms\\gamer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|solutionrelative:maze\\forms\\gamer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|D:\\7_semestr\\Labirint\\labyrinth\\maze\\forms\\authorization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|solutionrelative:maze\\forms\\authorization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|D:\\7_semestr\\Labirint\\labyrinth\\maze\\forms\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|solutionrelative:maze\\forms\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|D:\\7_semestr\\Labirint\\labyrinth\\maze\\forms\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|solutionrelative:maze\\forms\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|D:\\7_semestr\\Labirint\\labyrinth\\maze\\forms\\authorization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|solutionrelative:maze\\forms\\authorization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80673242-D700-4BA0-9344-DC6903E464CF}|Maze\\Maze.csproj|D:\\7_semestr\\Labirint\\labyrinth\\maze\\generators\\mazegeneratoreuler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,36 +54,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Gamer.cs",
               "DocumentMoniker": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Gamer.cs",
               "RelativeDocumentMoniker": "Maze\\Forms\\Gamer.cs",
               "ToolTip": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Gamer.cs",
               "RelativeToolTip": "Maze\\Forms\\Gamer.cs",
-              "ViewState": "AQIAAMsBAAAAAAAAAAAAAOMBAAA0AAAA",
+              "ViewState": "AQIAAFABAAAAAAAAAAAAAF8BAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T12:19:19.746Z",
+              "WhenOpened": "2024-12-19T12:44:44.998Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Admin.cs",
+              "RelativeDocumentMoniker": "Maze\\Forms\\Admin.cs",
+              "ToolTip": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Admin.cs",
+              "RelativeToolTip": "Maze\\Forms\\Admin.cs",
+              "ViewState": "AQIAADcBAAAAAAAAAAAmwFgBAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T07:49:16.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Registration.cs",
               "DocumentMoniker": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Registration.cs",
               "RelativeDocumentMoniker": "Maze\\Forms\\Registration.cs",
               "ToolTip": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Registration.cs",
               "RelativeToolTip": "Maze\\Forms\\Registration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAG4AAAARAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAYwG4AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T08:05:49.936Z"
+              "WhenOpened": "2024-12-12T08:05:49.936Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Gamer.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Gamer.cs",
               "RelativeDocumentMoniker": "Maze\\Forms\\Gamer.cs",
@@ -92,18 +106,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T07:49:16.933Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MazeGeneratorEuler.cs",
-              "DocumentMoniker": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Generators\\MazeGeneratorEuler.cs",
-              "RelativeDocumentMoniker": "Maze\\Generators\\MazeGeneratorEuler.cs",
-              "ToolTip": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Generators\\MazeGeneratorEuler.cs",
-              "RelativeToolTip": "Maze\\Generators\\MazeGeneratorEuler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T07:49:15.339Z"
             },
             {
               "$type": "Document",
@@ -131,32 +133,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Admin.cs [Design]",
+              "DocumentIndex": 3,
+              "Title": "Admin.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Admin.cs",
               "RelativeDocumentMoniker": "Maze\\Forms\\Admin.cs",
-              "ToolTip": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Admin.cs [Design]",
-              "RelativeToolTip": "Maze\\Forms\\Admin.cs [Design]",
+              "ToolTip": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Admin.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "Maze\\Forms\\Admin.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T07:49:16.926Z",
-              "EditorCaption": " [Design]"
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Admin.cs",
-              "DocumentMoniker": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Admin.cs",
-              "RelativeDocumentMoniker": "Maze\\Forms\\Admin.cs",
-              "ToolTip": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Admin.cs",
-              "RelativeToolTip": "Maze\\Forms\\Admin.cs",
-              "ViewState": "AQIAAFsBAAAAAAAAAAAkwDsBAAAaAAAA",
+              "DocumentIndex": 6,
+              "Title": "MazeGeneratorEuler.cs",
+              "DocumentMoniker": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Generators\\MazeGeneratorEuler.cs",
+              "RelativeDocumentMoniker": "Maze\\Generators\\MazeGeneratorEuler.cs",
+              "ToolTip": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Generators\\MazeGeneratorEuler.cs",
+              "RelativeToolTip": "Maze\\Generators\\MazeGeneratorEuler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T07:49:16.928Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T07:49:15.339Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Authorization.cs",
               "DocumentMoniker": "D:\\7_semestr\\Labirint\\labyrinth\\Maze\\Forms\\Authorization.cs",
               "RelativeDocumentMoniker": "Maze\\Forms\\Authorization.cs",

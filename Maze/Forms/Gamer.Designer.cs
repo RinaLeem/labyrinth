@@ -66,7 +66,7 @@
             // 
             this.aboutUs.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.aboutUs.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.aboutUs.Font = new System.Drawing.Font("Montserrat", 10.8F);
+            this.aboutUs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.aboutUs.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.aboutUs.Location = new System.Drawing.Point(26, -2);
             this.aboutUs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -81,7 +81,7 @@
             // 
             this.aboutSys.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.aboutSys.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.aboutSys.Font = new System.Drawing.Font("Montserrat", 10.8F);
+            this.aboutSys.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.aboutSys.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.aboutSys.Location = new System.Drawing.Point(273, -2);
             this.aboutSys.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -96,7 +96,7 @@
             // 
             this.outputMazeFile.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.outputMazeFile.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.outputMazeFile.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.outputMazeFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.outputMazeFile.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outputMazeFile.Location = new System.Drawing.Point(693, 523);
             this.outputMazeFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -112,25 +112,26 @@
             this.radioButtonAU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonAU.AutoSize = true;
             this.radioButtonAU.Checked = true;
-            this.radioButtonAU.Font = new System.Drawing.Font("Montserrat", 10.8F);
+            this.radioButtonAU.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.radioButtonAU.Location = new System.Drawing.Point(1, 15);
             this.radioButtonAU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonAU.Name = "radioButtonAU";
-            this.radioButtonAU.Size = new System.Drawing.Size(91, 29);
+            this.radioButtonAU.Size = new System.Drawing.Size(83, 26);
             this.radioButtonAU.TabIndex = 9;
             this.radioButtonAU.TabStop = true;
             this.radioButtonAU.Text = "Осень";
             this.radioButtonAU.UseVisualStyleBackColor = true;
+            this.radioButtonAU.CheckedChanged += new System.EventHandler(this.radioButtonAU_CheckedChanged);
             // 
             // radioButtonSP
             // 
             this.radioButtonSP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonSP.AutoSize = true;
-            this.radioButtonSP.Font = new System.Drawing.Font("Montserrat", 10.8F);
+            this.radioButtonSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.radioButtonSP.Location = new System.Drawing.Point(245, 15);
             this.radioButtonSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonSP.Name = "radioButtonSP";
-            this.radioButtonSP.Size = new System.Drawing.Size(90, 29);
+            this.radioButtonSP.Size = new System.Drawing.Size(82, 26);
             this.radioButtonSP.TabIndex = 10;
             this.radioButtonSP.Text = "Весна";
             this.radioButtonSP.UseVisualStyleBackColor = true;
@@ -139,11 +140,11 @@
             // 
             this.radioButtonSU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonSU.AutoSize = true;
-            this.radioButtonSU.Font = new System.Drawing.Font("Montserrat", 10.8F);
+            this.radioButtonSU.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.radioButtonSU.Location = new System.Drawing.Point(1, 50);
             this.radioButtonSU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonSU.Name = "radioButtonSU";
-            this.radioButtonSU.Size = new System.Drawing.Size(78, 29);
+            this.radioButtonSU.Size = new System.Drawing.Size(72, 26);
             this.radioButtonSU.TabIndex = 11;
             this.radioButtonSU.Text = "Лето";
             this.radioButtonSU.UseVisualStyleBackColor = true;
@@ -152,11 +153,11 @@
             // 
             this.radioButtonWI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonWI.AutoSize = true;
-            this.radioButtonWI.Font = new System.Drawing.Font("Montserrat", 10.8F);
+            this.radioButtonWI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.radioButtonWI.Location = new System.Drawing.Point(245, 50);
             this.radioButtonWI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonWI.Name = "radioButtonWI";
-            this.radioButtonWI.Size = new System.Drawing.Size(81, 29);
+            this.radioButtonWI.Size = new System.Drawing.Size(75, 26);
             this.radioButtonWI.TabIndex = 12;
             this.radioButtonWI.Text = "Зима";
             this.radioButtonWI.UseVisualStyleBackColor = true;
@@ -166,11 +167,11 @@
             this.radioButtonHands.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonHands.AutoSize = true;
             this.radioButtonHands.Checked = true;
-            this.radioButtonHands.Font = new System.Drawing.Font("Montserrat", 10.8F);
+            this.radioButtonHands.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.radioButtonHands.Location = new System.Drawing.Point(18, 4);
             this.radioButtonHands.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonHands.Name = "radioButtonHands";
-            this.radioButtonHands.Size = new System.Drawing.Size(102, 29);
+            this.radioButtonHands.Size = new System.Drawing.Size(92, 26);
             this.radioButtonHands.TabIndex = 13;
             this.radioButtonHands.TabStop = true;
             this.radioButtonHands.Text = "Ручной";
@@ -180,11 +181,11 @@
             // 
             this.radioButtonAuto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonAuto.AutoSize = true;
-            this.radioButtonAuto.Font = new System.Drawing.Font("Montserrat", 10.8F);
+            this.radioButtonAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.radioButtonAuto.Location = new System.Drawing.Point(18, 38);
             this.radioButtonAuto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonAuto.Name = "radioButtonAuto";
-            this.radioButtonAuto.Size = new System.Drawing.Size(189, 29);
+            this.radioButtonAuto.Size = new System.Drawing.Size(170, 26);
             this.radioButtonAuto.TabIndex = 14;
             this.radioButtonAuto.Text = "Автоматический";
             this.radioButtonAuto.UseVisualStyleBackColor = true;
@@ -194,11 +195,11 @@
             this.radioButtonWave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonWave.AutoSize = true;
             this.radioButtonWave.Checked = true;
-            this.radioButtonWave.Font = new System.Drawing.Font("Montserrat", 10.8F);
+            this.radioButtonWave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.radioButtonWave.Location = new System.Drawing.Point(21, 53);
             this.radioButtonWave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonWave.Name = "radioButtonWave";
-            this.radioButtonWave.Size = new System.Drawing.Size(219, 29);
+            this.radioButtonWave.Size = new System.Drawing.Size(196, 26);
             this.radioButtonWave.TabIndex = 15;
             this.radioButtonWave.TabStop = true;
             this.radioButtonWave.Text = "Волновой алгоритм";
@@ -208,11 +209,11 @@
             // 
             this.radioButton1Hands.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton1Hands.AutoSize = true;
-            this.radioButton1Hands.Font = new System.Drawing.Font("Montserrat", 10.8F);
+            this.radioButton1Hands.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.radioButton1Hands.Location = new System.Drawing.Point(21, 94);
             this.radioButton1Hands.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton1Hands.Name = "radioButton1Hands";
-            this.radioButton1Hands.Size = new System.Drawing.Size(236, 29);
+            this.radioButton1Hands.Size = new System.Drawing.Size(210, 26);
             this.radioButton1Hands.TabIndex = 16;
             this.radioButton1Hands.Text = "Алгоритм одной руки";
             this.radioButton1Hands.UseVisualStyleBackColor = true;
@@ -234,7 +235,7 @@
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(25, 465);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(457, 36);
@@ -248,7 +249,7 @@
             this.startGame.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.startGame.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.startGame.Enabled = false;
-            this.startGame.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.startGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.startGame.ForeColor = System.Drawing.SystemColors.WindowText;
             this.startGame.Location = new System.Drawing.Point(693, 569);
             this.startGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -277,7 +278,7 @@
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(2, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(457, 46);
@@ -288,7 +289,7 @@
             // labelChoice
             // 
             this.labelChoice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelChoice.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.labelChoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelChoice.Location = new System.Drawing.Point(19, 37);
             this.labelChoice.Name = "labelChoice";
             this.labelChoice.Size = new System.Drawing.Size(527, 46);
@@ -300,7 +301,7 @@
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(3, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(485, 46);
@@ -311,7 +312,7 @@
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(29, 542);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(620, 36);
@@ -378,7 +379,7 @@
             // 
             // textBegining
             // 
-            this.textBegining.Font = new System.Drawing.Font("Montserrat", 10.8F);
+            this.textBegining.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.textBegining.Location = new System.Drawing.Point(669, 219);
             this.textBegining.Multiline = true;
             this.textBegining.Name = "textBegining";
