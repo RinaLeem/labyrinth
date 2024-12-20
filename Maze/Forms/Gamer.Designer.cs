@@ -315,9 +315,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(29, 542);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(620, 36);
+            this.label4.Size = new System.Drawing.Size(504, 36);
             this.label4.TabIndex = 36;
-            this.label4.Text = "0               1                2                3              4";
+            this.label4.Text = "0            1            2              3             4";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label4.Visible = false;
             // 
