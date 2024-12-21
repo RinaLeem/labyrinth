@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Maze.exe.manifest" size="5386">
+    <dependentAssembly dependencyType="install" codebase="Maze.exe.manifest" size="5397">
       <assemblyIdentity name="Maze.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nfSgslyjeWdVVOU5kKnjQysVjvt9pMQmppNrthk+aJs=</dsig:DigestValue>
+        <dsig:DigestValue>m9/MgiEoTWgr3u/gWZb3Gyf70T1lkV8AzmCFx6Tdels=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -3,6 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <title>Справочная информация</title>
+    <script>
+      // Когда пользователь прокручивает страницу, показать кнопку 
+window.onscroll = function () { 
+    scrollFunction(); 
+}; 
+   
+function scrollFunction() { 
+    const myBtn = document.getElementById("myBtn"); 
+    if (!myBtn) return;  
+    if (document.body.scrollTop > 140 || document.documentElement.scrollTop > 140) { 
+      myBtn.classList.add('show'); // Добавляем класс для плавного появления кнопки 
+    } else { 
+      myBtn.classList.remove('show'); // Удаляем класс для плавного исчезновения кнопки 
+    } 
+} 
+   
+// Когда пользователь нажимает на кнопку, прокрутить страницу наверх 
+function topFunction() { 
+    document.documentElement.scrollTo({top: 0, behavior: 'smooth'}); 
+    document.body.scrollTop.scrollTo({top: 0, behavior: 'smooth'}); 
+}
+    </script>
     <style>
       img {
         border-style: solid;
@@ -13,6 +35,7 @@
         font-family: Arial, sans-serif; /* Шрифт для всего документа */
         margin: 0;
         padding: 0 100px 0 100px;
+        background-color: #fff;
       }
       p {
         color: #000000;
@@ -35,6 +58,8 @@
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Тень для блока */
         width: 98%; /* Ширина блоков */
         margin: 10px; /* Отступ между блоками */
+        background-color: white;
+
       }
 
       .header {
@@ -109,6 +134,33 @@
         align-items: center; /* Выравниваем по центру по вертикали */
         margin-top: 20px; /* Отступ сверху для секции ролей */
       }
+
+      #myBtn { 
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; 
+} 
+   
+#myBtn.show { 
+    opacity: 1; 
+    visibility: visible; 
+} 
+ 
+/* Кнопка наверх */ 
+.buttonTop { 
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    background-image: linear-gradient(90deg, rgb(218, 53, 24) 0%, rgb(255, 179, 80) 50%, rgb(218, 53, 24) 100%); 
+    color: white; 
+    border: none; 
+    border-radius: 50%; 
+    width: 50px; 
+    height: 50px; 
+    font-size: 30px; 
+    cursor: pointer; 
+    z-index: 1; 
+  }
     </style>
   </head>
   <body>
@@ -128,18 +180,60 @@
         </p>
 
         <ul style="margin-top: 10px">
-          <!-- Добавляем отступ сверху для списка -->
+          <li>
+            <a href="#authorization" style="text-decoration: none; color: #688e50"
+              ><b>Авторизация</b></a
+            >
+          </li>
+          <li>
+            <a href="#registration" style="text-decoration: none; color: #688e50"
+              ><b>Регистрация</b></a
+            >
+          </li>
           <li>
             <a href="#model" style="text-decoration: none; color: #688e50"
               ><b>Модель лабиринта</b></a
             >
           </li>
+          
           <li>
             <a href="#functions" style="text-decoration: none; color: #688e50"
               ><b>Функции системы</b></a
             >
           </li>
         </ul>
+      </div>
+
+      <div id="authorization">
+        <h2>Авторизация</h2>
+
+        <p>
+          При запуске программы пользователь должен пройти авторизацию в
+          системе.
+        </p>
+
+        <div class="role-container">
+          <div>
+            <img class="logo" src="autor.jpg" alt="Авторизация" />
+          </div>
+        </div>
+
+
+      </div>
+      <div id="registration">
+        <h2>Регистрация</h2>
+
+        <p>
+          При первом посещении программы следует пройти регистрацию.
+        </p>
+
+        <div class="role-container">
+          <div>
+            <img class="logo" src="reg.jpg" alt="Регистрация" />
+          </div>
+        </div>
+
+
       </div>
 
       <div id="model">
@@ -154,10 +248,6 @@
           скорости движения и в ручном режиме.
         </p>
 
-        <p>
-          При запуске программы пользователь должен пройти авторизацию в
-          системе. При первом посещении программы следует пройти регистрацию.
-        </p>
 
         <div class="role-container">
           <div>
@@ -171,6 +261,7 @@
           </div>
         </div>
       </div>
+      
       <div id="functions" style="margin-top: 50px">
         <h2>Функции системы</h2>
       </div>
@@ -256,5 +347,7 @@
         <p>2024 г. Самарский университет</p>
       </footer>
     </div>
+    
+    <button class="buttonTop" onclick="topFunction()" id="myBtn" title="Go to top">↑</button>
   </body>
 </html>
